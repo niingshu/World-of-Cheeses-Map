@@ -13,13 +13,13 @@ const cheeseSchema = new Schema({
         required: true,
         trim: true, //removes accidental whitespace
     },
-    milk: { type: String, required: true },
+    milk: String,
     country: String,
     region: String,
-    type: { type: String, required: true },
-    texture: { type: String, required: true },
-    color: { type: String, required: true },
-    flavor: { type: String, required: true },
+    type: String,
+    texture: String,
+    color: String,
+    flavor: String,
 }, {
     timestamps: true //add createdAt updatedAt automatically
 });
