@@ -42,6 +42,12 @@ for i,entry in enumerate(data, start=1):
     else: 
         print(f"Fetching: {search_query}...")
         location = geocode(search_query)
+        
+        # if region search failed, fall back to country only
+        if not location and search_query != country:
+            print(f" Failed, retrying with just country: {country}")
+            location = geocode(country)
+
         if location:
             lat, lon = location.latitude, location.longitude
         else:
