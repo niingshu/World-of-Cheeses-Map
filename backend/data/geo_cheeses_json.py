@@ -31,9 +31,10 @@ with open(INPUT_FILE, "r", encoding="utf-8") as f:
 
 cleaned = []
 for i,entry in enumerate(data, start=1):
-    region = entry.get("region", "N/A")
-    country = entry.get("country", "")
-    search_query = country if region in ("NA", "", "N/A") else f"{region}, {country}"
+    region = entry.get("region", "")
+    country_raw = entry.get("country", "")
+    country = country_raw.split(",")[0].strip()
+    search_query = country if region in ("NA", "", "N/A", "+") else f"{region}, {country}"
 
     #check if in cache first 
     if search_query in geo_cache:
@@ -57,10 +58,10 @@ for i,entry in enumerate(data, start=1):
     cleaned.append(new_entry)
 
 #save 
-with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+with open(OUTPUT_FILE, "w", encoding="utf-8") as f: # "w" = overwrite
     json.dump(cleaned, f, indent=2, ensure_ascii=False)
 
-with open(CACHE_FILE, "w") as f:
+with open(CACHE_FILE, "w") as f: # "w" = overwrite
     json.dump(geo_cache, f)
 
 print(f"Done! Processed {len(cleaned)} cheeses.")
