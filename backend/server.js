@@ -1,10 +1,10 @@
 //entry point of application, backend talk to mongoose, frontend fetch 
+require('dotenv').config({ path: '../.env' });
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const routerPath = './routes/cheeses.js';
 const cheeseRouter = require(routerPath)
-require('dotenv').config({ path: '../.env' });
 
 const app = express();
 const PORT = process.env.PORT || 3000; //3000 is fallback

@@ -1,9 +1,9 @@
+const path = require('path')
+require('dotenv').config(path.join(__dirname, '../../.env')); //load .env file from root 
 const mongoose = require('mongoose');
 const fs = require('fs');
 const modelPath = '../models/Cheese' //path to Cheese
 const Cheese = require(modelPath); //import the model
-const path = require('path')
-require('dotenv').config(path.join(__dirname, '../../.env')); //load .env file from root 
 
 //connect to MongoDB
 mongoose.connect(process.env.MONGO_URI) //node read the mongoURI
