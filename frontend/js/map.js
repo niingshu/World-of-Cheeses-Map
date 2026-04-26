@@ -35,6 +35,9 @@ var highlightCheese = L.icon({
 async function initMap() {
     const data = await fetchCheeses()
 
+    //create the cluster group 
+    const clusters = L.markerClusterGroup()
+
     data.forEach(cheese => {
         if (!cheese.lat || !cheese.lon) return; //skip the rest 
 
@@ -49,8 +52,9 @@ async function initMap() {
             : `${cheese.cheese} (${cheese.country})`;
 
         const marker = L.marker([cheese.lat, cheese.lon], { icon: cheeseSpot })
-            .addTo(map)
             .bindTooltip(tooltip);
+        
+        clusters.addLayer(marker); //add marker to cluster group 
 
         cheesesMap.set(cheese._id, marker);
 
@@ -59,6 +63,8 @@ async function initMap() {
             map.flyTo(marker.getLatLng(), 6)
         });
     });
+
+    map.addLayer(clusters);
 
     if (bounds.length > 0) map.fitBounds(bounds);
 }
