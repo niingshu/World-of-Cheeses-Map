@@ -1,0 +1,224 @@
+
+/*Leaflet night/dark mode*/
+.leaflet-layer,
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out,
+.leaflet-control-attribution {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(211, 216, 221);
+    font-family: sans-serif;
+}
+
+.top-bar { /* class */
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(220, 220, 222);
+}
+
+.on-top {
+    padding: 10px;
+    background: rgb(220, 220, 222);
+    z-index: 1000;
+}
+
+#cheese-world-map {
+    flex: 1;
+    width: 100%;
+}
+
+.map-titles {
+    text-align: center;
+    color:rgb(17, 37, 55);
+}
+
+.search {
+    position: fixed;
+    top: 25px;
+    right: 16px;
+    width: 260px;
+    z-index: 2000; /*stay above the map*/
+    overflow-y: scroll; /*scrollable*/
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+#resultList {
+    z-index: 10000;
+    list-style-type: none;
+    background-color: #e9e8e8;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ddd;
+
+    max-height: calc(100vh - 69px);
+    overflow-y: auto; /*scrollable*/
+    overflow-x: hidden;
+}
+
+#resultList li:last-child {
+    z-index: 2000;
+    border-bottom: none;
+}
+
+#resultList li:hover {
+    z-index: 2000;
+    background-color: #fbf9f9;
+    font-weight: bold;
+}
+
+/*bold the matching letters in a search*/
+b {
+    font-weight: bold;
+}
+
+/*filtering functions*/
+.controls {
+    position: fixed;
+    top: 25px;
+    left: 16px;
+    z-index: 2000;
+    background: rgb(220, 220, 222);
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+/*The sidepanel menu*/
+.sidepanel {
+    width: 0;
+    height: calc(100vh - 106px);
+    position: fixed; /*stay in place*/
+    z-index: 1000; /*stay on top*/
+    top: 0;
+    right: 0; /*show the panel on the right*/
+    margin-top: 90px;
+    margin-bottom: 70px;
+    border-radius: 6px;
+    background-color: white; /*black*/
+    overflow-x: hidden; /*disable horizontal scroll*/
+    overflow-y: scroll;
+    padding: 40px 20ox; /*placed content 60px from the top*/
+    transition: 0.3s; /*0.3 second transition effect to slide in side panel*/
+}
+
+/*resizing bar*/
+.resize-bar {
+    position: absolute; 
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    cursor: ew-resize;
+    background: transparent;
+}
+
+.resize-bar:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/*highlight the selected marker, connected to js*/
+.markerSelected {
+    transform: scale(1.75);
+    filter: drop-shadow(0px 0px 10px rgba(243, 29, 29, 0.5));
+}
+
+/* The sidepanel links */
+.sidepanel a {
+  padding: 8px 8px 15px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidepanel .name {
+    padding: 0px 0px 0px 20px;
+    color: #181818;
+    font-weight: bold;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 29px;
+}
+
+/*display the text within the panel*/
+.sidepanel a, .sidepanel p { 
+    padding: 0px 10px 3px 20px;
+    text-decoration: none;
+    font-size: 17px;
+    color: #585858;
+    display: block;
+    overflow-y: scroll;
+    transition: 0.3s;
+}
+
+/*
+.panel-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+*/
+
+/* When you mouse over the navigation links, change their color */
+.sidepanel a:hover {
+  color: #151515;
+}
+
+/* Position and style the close button (top right corner) */
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  text-decoration: none;
+  color: rgb(75, 75, 75);
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+/* Style the button that is used to open the sidepanel */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  overflow-y: scroll;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #1a1919;
+}
+
+.sidepanel.is-dragging {
+    background-color: lightblue;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> World Cheese Map </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- leaflet css file in the head section -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body> 
+    <div class="on-top">
+        <div class="top-bar">
+            <h1 id="title" class="map-titles">World of Cheeses Map</h1>
+        </div>
+
+            <!--search tool-->
+            <div class="search">
+                <input type="text" id="searchInput" placeholder="Search for cheese...">
+                <ul id="resultList"></ul>
+            </div>
+
+            <!--filtering button and options-->
+            <div class="controls">
+                <button id="filterBtn">Filter Cheese By Categories</button>
+                <select id="categoryFilter" style="display:none;">
+                    <!--options will be dynamically added here-->
+                </select>
+            </div>
+        <!--container where data will be displayed-->
+            <div id="productContainer">
+                <!--data will be inserted here by js-->
+            </div>
+
+            <!--panel-->
+            <div id="cheeseSidePanel" class="sidepanel"> 
+                <!--data will be inserted here by js-->
+            </div>
+    </div>
+
+    <!--map-->
+    <div id = "cheese-world-map"></div>
+
+    <!-- leaflet javascript after leaflet's css-->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+    <script src="app.js"></script>
+</body>
+</html>
