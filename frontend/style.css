@@ -54,24 +54,28 @@ body {
     width: 100%;
     padding: 12px 20px;
     box-sizing: border-box;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
 #resultList {
     z-index: 10000;
-    list-style-type: none;
-    background-color: #e9e8e8;
+    list-style: none;
+    font-size: small;
+    margin: 2px 0 0;
     padding: 0;
-    margin: 0;
-    border: 1px solid #ddd;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    background: #e9e8e8;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
 
-    max-height: calc(100vh - 69px);
-    overflow-y: auto; /*scrollable*/
-    overflow-x: hidden;
+#resultList li {
+    padding: 2px 3px;
+    cursor: pointer;
 }
 
 #resultList li:last-child {
-    z-index: 2000;
     border-bottom: none;
 }
 
@@ -82,7 +86,7 @@ body {
 }
 
 /*bold the matching letters in a search*/
-b {
+#resultList b {
     font-weight: bold;
 }
 

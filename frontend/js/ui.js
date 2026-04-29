@@ -3,6 +3,7 @@
 //clear existing markers from map
 //loop through results and add new markers
 
+//filter box
 document.addEventListener('DOMContentLoaded', () => {
     const countryList = document.getElementById('countryList');
     const filterBtn = document.getElementById('filterBtn');
@@ -80,4 +81,38 @@ document.addEventListener('DOMContentLoaded', () => {
     
     });
 
+
+});
+
+//search box
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('searchInput');
+    const resultList = document.getElementById('resultList');
+    let debounceTimer;
+
+    searchInput.addEventListener('input', (event) => {
+        const query = event.target.value.trim();
+
+        clearTimeout(debounceTimer);
+
+        if (query.length === 0) {
+            resultList.innerHTML = '';
+            return;
+        }
+
+        debounceTimer = setTimeout(() => {
+            fetch(`${API_BASE}/api/cheeses?name=${encodeURIComponent(query)}`)
+                .then(response => response.json())
+                .then(cheeses => {
+                    resultList.innerHTML = '';
+                    cheeses.forEach(item => {
+                        const li = document.createElement('li');
+                        const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+                        li.innerHTML = item.cheese.replace(regex, '<b>$1</b>');
+                        resultList.appendChild(li);
+                    });
+                })
+                .catch(error => console.error('Error searching cheeses: ', error));
+        }, 500);
+    });
 })
