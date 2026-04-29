@@ -91,10 +91,38 @@ b {
     position: fixed;
     top: 25px;
     left: 16px;
+    width: 200px;
     z-index: 2000;
     background: rgb(220, 220, 222);
     padding: 10px;
     border-radius: 6px;
+}
+
+#filterBtn {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#countryList {
+    list-style: none;
+    font-size: small;
+    margin: 4px 0 0;
+    padding: 0;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    background: #e9e8e8;
+    border-radius: 1px;
+}
+
+#countryList li {
+    padding: 2px 5px;
+    cursor: pointer;
+}
+
+#countryList li:hover,
+#countryList li.active {
+    background: #fbf9f9;
+    font-weight: bold;
 }
 
 .item {

@@ -1,6 +1,7 @@
 const map = L.map('cheese-world-map').setView([20, 10], 2);
 const bounds = [];
 const cheesesMap = new Map();
+const clusters = L.markerClusterGroup();
 let selectedMarker = null;
 let selectedCheese = null;
 
@@ -34,9 +35,6 @@ var highlightCheese = L.icon({
 
 async function initMap() {
     const data = await fetchCheeses()
-
-    //create the cluster group 
-    const clusters = L.markerClusterGroup()
 
     data.forEach(cheese => {
         if (!cheese.lat || !cheese.lon) return; //skip the rest 

@@ -30,10 +30,8 @@
 
             <!--filtering button and options-->
             <div class="controls">
-                <button id="filterBtn">Filter Cheese By Categories</button>
-                <select id="categoryFilter" style="display:none;">
-                    <!--options will be dynamically added here-->
-                </select>
+                <button id="filterBtn">Filter Cheese By Country</button>
+                <ul id="countryList" style="display:none;"></ul>
             </div>
         <!--container where data will be displayed-->
             <div id="productContainer">
@@ -57,5 +55,6 @@
 
     <script src="js/api.js"></script>
     <script src="js/map.js"></script>
+    <script src="js/ui.js"></script> <!-- so API BASE is available -->
 </body>
 </html>

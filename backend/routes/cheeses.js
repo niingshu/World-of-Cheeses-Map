@@ -31,10 +31,13 @@ router.get('/', async (req, res) => {
 
 // GET/api/countries - distinct list of countries (filer dropdown)
 router.get('/countries', async (req, res) => {
-    try { 
-        //distinct country returns an array of unique strings
-        const countries = await Cheese.distinct('country');
-        res.json(countries.sort()); //alphabetical ordered
+    try {
+        const rawCountries = await Cheese.distinct('country');
+        //split multi-country strings like "Italy, United States" into individual entries
+        const countries = [...new Set(
+            rawCountries.flatMap(c => c.split(',').map(s => s.trim()))
+        )].sort();
+        res.json(countries);
     } catch (err) {
         res.status(500).json({ error: "Failed to fetch countries" });
     }
