@@ -91,6 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let debounceTimer;
 
     searchInput.addEventListener('input', (event) => {
+        //reset the map 
+        initMap()
+        
         const query = event.target.value.trim();
 
         clearTimeout(debounceTimer);
@@ -107,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     resultList.innerHTML = '';
                     cheeses.forEach(item => {
                         const li = document.createElement('li');
+                        li.dataset.id = item._id;
                         const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
                         li.innerHTML = item.cheese.replace(regex, '<b>$1</b>');
                         resultList.appendChild(li);
@@ -115,4 +119,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 .catch(error => console.error('Error searching cheeses: ', error));
         }, 500);
     });
+
+    resultList.addEventListener('click', (event) => {
+        const li = event.target.closest('li');
+        if (!li) return;
+
+        const cheeseId = li.dataset.id;
+
+        fetch(`${API_BASE}/api/cheeses/${cheeseId}`)
+            .then(response => response.json())
+            .then(cheese => {
+                //remove all cluster 
+                clusters.clearLayers();
+                cheesesMap.clear();
+
+                //call to display the panel in the search
+                const region = (!cheese.region || cheese.region === "NA" || cheese.region === "N/A")
+                    ? ""
+                    : cheese.region;
+
+                const tooltip = region
+                    ? `${cheese.cheese} (${region}, ${cheese.country})`
+                    : `${cheese.cheese} (${cheese.country})`;
+
+                const marker = L.marker([cheese.lat, cheese.lon], { icon: cheeseSpot })
+                    .bindTooltip(tooltip);
+
+                clusters.addLayer(marker);
+                cheesesMap.set(cheese._id, marker);
+
+                map.flyTo(marker.getLatLng(), 6)
+                
+                marker.on('click', () => {
+                    onCheeseClick(cheese, marker);
+                });
+                
+            })
+            .catch(error => console.error('Error finding cheese: ', error));
+
+    });
 })
+
+
+//fix the filter box below the +/- of leaflet

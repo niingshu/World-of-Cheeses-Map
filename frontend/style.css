@@ -52,7 +52,7 @@ body {
 
 #searchInput {
     width: 100%;
-    padding: 12px 20px;
+    padding: 10px 10px;
     box-sizing: border-box;
     border-radius: 6px;
 }
@@ -71,7 +71,7 @@ body {
 }
 
 #resultList li {
-    padding: 2px 3px;
+    padding: 2px 10px;
     cursor: pointer;
 }
 
@@ -167,12 +167,6 @@ body {
 
 .resize-bar:hover {
     background: rgba(0, 0, 0, 0.1);
-}
-
-/*highlight the selected marker, connected to js*/
-.markerSelected {
-    transform: scale(1.75);
-    filter: drop-shadow(0px 0px 10px rgba(243, 29, 29, 0.5));
 }
 
 /* The sidepanel links */
