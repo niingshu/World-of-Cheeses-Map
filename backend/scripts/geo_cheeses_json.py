@@ -6,13 +6,13 @@ from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
 
 # - CONFIG - 
-BASE_DIR = Path(__file__).parent #resolve paths relative to this script location
-INPUT_FILE  = BASE_DIR/"processed"/"cheeses_clean_no_loc.json"
-CACHE_FILE = BASE_DIR/"processed"/"geo_cache.json"
-OUTPUT_FILE = BASE_DIR/"processed"/"cheeses_clean_geo.json"
+BASE_DIR = Path(__file__).parent.parent #resolve paths relative to this script location
+INPUT_FILE  = BASE_DIR/"data"/"processed"/"cheeses_clean_no_loc.json"
+CACHE_FILE = BASE_DIR/"data"/"processed"/"geo_cache.json"
+OUTPUT_FILE = BASE_DIR/"data"/"processed"/"cheeses_clean_geo.json"
 
 #make sure output folder exists
-OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+OUTPUT_FILE.parent.parent.mkdir(parents=True, exist_ok=True)
 
 #load/initialize cache 
 if os.path.exists(CACHE_FILE):

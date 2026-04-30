@@ -2,12 +2,12 @@ import json
 from pathlib import Path
 
 # - CONFIG - 
-BASE_DIR = Path(__file__).parent #resolve paths relative to this script location
-INPUT_FILE  = BASE_DIR/"raw"/"cheeses.json"
-OUTPUT_FILE = BASE_DIR/"processed"/"cheeses_clean_no_loc.json"
+BASE_DIR = Path(__file__).parent.parent #resolve paths relative to this script location
+INPUT_FILE  = BASE_DIR/"data"/"raw"/"cheeses.json"
+OUTPUT_FILE = BASE_DIR/"data"/"processed"/"cheeses_clean_no_loc.json"
 
 #make sure output folder exists
-OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+OUTPUT_FILE.parent.parent.mkdir(parents=True, exist_ok=True)
 
 # fields to delete
 FIELDS_TO_REMOVE = {
