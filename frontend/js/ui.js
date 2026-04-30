@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.addEventListener('input', (event) => {
         //reset the map 
         initMap()
-        
+
         const query = event.target.value.trim();
 
         clearTimeout(debounceTimer);
