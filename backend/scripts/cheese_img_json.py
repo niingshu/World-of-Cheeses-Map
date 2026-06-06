@@ -1,15 +1,19 @@
+#tell the vscode interpreter to look at the venv of the project, where requests is being installed not the homebrewed one
 import requests
 from bs4 import BeautifulSoup
 import json
 import os
 import time
 from pathlib import Path
+from urllib.parse import quote
 
 # - CONFIG -
 BASE_DIR = Path(__file__).parent.parent
 INPUT_FILE  = BASE_DIR/"data"/"processed"/"cheeses_clean_geo.json"
 CACHE_FILE = BASE_DIR/"data"/"processed"/"img_cache.json"
 OUTPUT_FILE = BASE_DIR/"data"/"processed"/"final_cheeses.json"
+WIKI_CACHE_FILE = BASE_DIR/"data"/"processed"/"wiki_img_cache.json"
+WIKI_API_URL = "https://en.wikipedia.org/api/rest_v1/page/summary/"
 
 #make sure output folder exists
 OUTPUT_FILE.parent.parent.mkdir(parents=True, exist_ok=True)
@@ -48,29 +52,54 @@ def scrape(url):
 
     return None
 
+def scrape_wikipedia(cheese_name):
+    try:
+        api_url = WIKI_API_URL + quote(cheese_name)
+        hdrs = {"User-Agent": "CheeseMapBot/1.0 (educational project)"}
+        response = requests.get(api_url, headers=hdrs, timeout=10)
+        if response.status_code == 200:
+            result_data = response.json()
+            img = result_data.get("originalimage", {}).get("source")
+            if img:
+                return img
+    except Exception as e:
+        print(f"  ! Error fetching Wikipedia for {cheese_name}: {e}")
+    return None
+
 
 # -- MAIN --
 with open(INPUT_FILE, "r", encoding="utf-8") as f:
     data = json.load(f)
 
-#load cache so we don't re-scrape on restart
+#load caches so we don't re-scrape on restart
 img_cache = load_json(CACHE_FILE)
+wiki_cache = load_json(WIKI_CACHE_FILE)
 
 result = []
 for i, entry in enumerate(data, start=1):
     url = entry.get("url", "")
     cheese_name = entry.get("cheese", "unknown")
 
-    #check cache first
+    #check cheese.com cache first
     if url in img_cache:
         img_url = img_cache[url]
     else:
-        print(f"[{i}/{len(data)}] Scraping: {cheese_name}...")
+        print(f"[{i}/{len(data)}] Scraping cheese.com: {cheese_name}...")
         img_url = scrape(url)
         img_cache[url] = img_url
-        #save cache after every new fetch in case of crash
         save_json(CACHE_FILE, img_cache)
         time.sleep(1)
+
+    #fallback to Wikipedia if cheese.com had no image
+    if img_url is None:
+        if cheese_name in wiki_cache:
+            img_url = wiki_cache[cheese_name]
+        else:
+            print(f"[{i}/{len(data)}] Trying Wikipedia: {cheese_name}...")
+            img_url = scrape_wikipedia(cheese_name)
+            wiki_cache[cheese_name] = img_url
+            save_json(WIKI_CACHE_FILE, wiki_cache)
+            time.sleep(1)
 
     new_entry = {**entry, "image": img_url}
     result.append(new_entry)
