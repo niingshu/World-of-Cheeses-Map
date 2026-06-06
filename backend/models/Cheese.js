@@ -8,7 +8,7 @@ const cheeseSchema = new Schema({
     lat: Number,
     lon: Number,
     cheese: { type: String, required: true },
-    img: String, //can be null (no pic scraped)
+    image: String,
     url: { 
         type: String, 
         required: true,

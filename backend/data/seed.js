@@ -1,5 +1,5 @@
 const path = require('path')
-require('dotenv').config(path.join(__dirname, '../../.env')); //load .env file from root 
+require('dotenv').config({ path: path.join(__dirname, '../../.env') });
 const mongoose = require('mongoose');
 const fs = require('fs');
 const modelPath = '../models/Cheese' //path to Cheese
@@ -13,7 +13,7 @@ mongoose.connect(process.env.MONGO_URI) //node read the mongoURI
 const seedDatabase = async () => {
     try {
         //read cheeses_clean_geo.json, utf-8 ensures read as a string, not buffer
-        const jsonPath = path.join(__dirname, 'processed', 'cheeses_clean_geo.json');;
+        const jsonPath = path.join(__dirname, 'processed', 'final_cheeses.json');
         const data = JSON.parse(fs.readFileSync(jsonPath, 'utf-8')); //onetime setup script
 
         //clear existing data (if not cleaned)

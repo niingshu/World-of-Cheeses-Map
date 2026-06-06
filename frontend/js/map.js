@@ -94,7 +94,7 @@ function cheesePanel(chosenCheese) {
     closeBtn.textContent = '×';
     closeBtn.addEventListener('click', () => {
         panel.style.width = '0';
-        panel.style.padding = '40px 0';
+        panel.style.padding = '10px 0';
     });
     panel.appendChild(closeBtn);
 
@@ -107,9 +107,8 @@ function cheesePanel(chosenCheese) {
     title.textContent = chosenCheese.cheese;
 
     const cheeseImg = document.createElement('img');
-    cheeseImg.src = chosenCheese.img || '';
+    cheeseImg.src = chosenCheese.image || 'images/no-cheese.jpg';
     cheeseImg.className = 'panel-image';
-    if (!chosenCheese.img) cheeseImg.style.display = 'none';
 
     const region = (!chosenCheese.region || chosenCheese.region === "NA" || chosenCheese.region === "N/A")
         ? ""
@@ -143,7 +142,7 @@ function cheesePanel(chosenCheese) {
 
     panel.appendChild(card);
 
-    panel.style.padding = '40px 20px';
+    panel.style.padding = '10px 20px';
     panel.style.width = '33vw'; //25 if i want it to be 1/4 the screen
 }
 

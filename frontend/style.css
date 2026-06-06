@@ -150,7 +150,7 @@ body {
     background-color: white; /*black*/
     overflow-x: hidden; /*disable horizontal scroll*/
     overflow-y: scroll;
-    padding: 40px 0;
+    padding: 10px 0;
     transition: 0.3s;
 }
 
@@ -180,13 +180,12 @@ body {
 }
 
 .sidepanel .name {
-    padding: 0px 0px 0px 20px;
+    margin: 0 0 5px 0;
+    padding: 0 40px 0 0;
     color: #181818;
     font-weight: bold;
-    text-decoration: none;
-    align-items: center;
-    justify-content: center;
     font-size: 29px;
+    line-height: 36px;
 }
 
 /*display the text within the panel*/
@@ -203,9 +202,13 @@ body {
 .panel-image {
     width: 100%;
     height: auto;
-    margin-bottom: 12px;
+    margin-bottom: 4px;
     border-radius: 6px;
     object-fit: cover;
+}
+
+.cheese-card {
+    padding-bottom: 60px;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -217,7 +220,7 @@ body {
 .sidepanel .closebtn {
   position: absolute;
   top: 0;
-  right: 25px;
+  right: 5px;
   font-size: 36px;
   margin-left: 50px;
   text-decoration: none;
