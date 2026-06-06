@@ -190,13 +190,18 @@ body {
 
 /*display the text within the panel*/
 .sidepanel a, .sidepanel p { 
-    padding: 0px 10px 3px 20px;
+    padding: 0px 10px 3px 10px;
     text-decoration: none;
     font-size: 17px;
     color: #585858;
     display: block;
     overflow-y: scroll;
     transition: 0.3s;
+}
+
+.sidepanel p strong {
+    font-size: 19px;
+    color: #333;
 }
 
 .panel-image {

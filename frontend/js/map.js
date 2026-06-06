@@ -130,7 +130,10 @@ function cheesePanel(chosenCheese) {
     fields.forEach(([label, value]) => {
         if (!value) return;
         const p = document.createElement('p');
-        p.textContent = `${label}: ${value}`;
+        const strong = document.createElement('strong');
+        strong.textContent = `${label}: `;
+        p.appendChild(strong);
+        p.appendChild(document.createTextNode(value));
         card.appendChild(p);
     });
 
