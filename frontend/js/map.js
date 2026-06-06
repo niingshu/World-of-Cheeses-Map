@@ -84,4 +84,67 @@ function onCheeseClick(chosenCheese, marker) {
     cheesePanel(selectedCheese); //passing in the selected cheese
 }
 
+function cheesePanel(chosenCheese) {
+    const panel = document.getElementById('cheese-panel');
+
+    panel.innerHTML = '';
+
+    const closeBtn = document.createElement('a');
+    closeBtn.className = 'closebtn';
+    closeBtn.textContent = '×';
+    closeBtn.addEventListener('click', () => {
+        panel.style.width = '0';
+        panel.style.padding = '40px 0';
+    });
+    panel.appendChild(closeBtn);
+
+    const card = document.createElement('div');
+    card.className = 'cheese-card';
+    card.setAttribute('data-id', chosenCheese._id);
+
+    const title = document.createElement('h2');
+    title.className = 'name';
+    title.textContent = chosenCheese.cheese;
+
+    const cheeseImg = document.createElement('img');
+    cheeseImg.src = chosenCheese.img || '';
+    cheeseImg.className = 'panel-image';
+    if (!chosenCheese.img) cheeseImg.style.display = 'none';
+
+    const region = (!chosenCheese.region || chosenCheese.region === "NA" || chosenCheese.region === "N/A")
+        ? ""
+        : chosenCheese.region;
+
+    const fields = [
+        ['Country', chosenCheese.country],
+        ['Region', region],
+        ['Milk', chosenCheese.milk],
+        ['Type', chosenCheese.type],
+        ['Texture', chosenCheese.texture],
+        ['Color', chosenCheese.color],
+        ['Flavor', chosenCheese.flavor],
+    ];
+
+    card.appendChild(title);
+    card.appendChild(cheeseImg);
+
+    fields.forEach(([label, value]) => {
+        if (!value) return;
+        const p = document.createElement('p');
+        p.textContent = `${label}: ${value}`;
+        card.appendChild(p);
+    });
+
+    const link = document.createElement('a');
+    link.href = chosenCheese.url;
+    link.target = '_blank';
+    link.textContent = 'View on cheese.com';
+    card.appendChild(link);
+
+    panel.appendChild(card);
+
+    panel.style.padding = '40px 20px';
+    panel.style.width = '33vw'; //25 if i want it to be 1/4 the screen
+}
+
 initMap();

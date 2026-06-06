@@ -150,8 +150,8 @@ body {
     background-color: white; /*black*/
     overflow-x: hidden; /*disable horizontal scroll*/
     overflow-y: scroll;
-    padding: 40px 20ox; /*placed content 60px from the top*/
-    transition: 0.3s; /*0.3 second transition effect to slide in side panel*/
+    padding: 40px 0;
+    transition: 0.3s;
 }
 
 /*resizing bar*/
@@ -200,7 +200,6 @@ body {
     transition: 0.3s;
 }
 
-/*
 .panel-image {
     width: 100%;
     height: auto;
@@ -208,7 +207,6 @@ body {
     border-radius: 6px;
     object-fit: cover;
 }
-*/
 
 /* When you mouse over the navigation links, change their color */
 .sidepanel a:hover {
