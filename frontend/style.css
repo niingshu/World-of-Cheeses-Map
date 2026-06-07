@@ -251,6 +251,26 @@ body {
   background-color: #1a1919;
 }
 
+.cheese-link-btn {
+    display: inline-block !important;
+    background-color: #a0cfee;
+    color: #1a3a52 !important;
+    padding: 10px 20px !important;
+    border-radius: 8px;
+    font-size: 17px !important;
+    font-weight: 600;
+    text-decoration: none !important;
+    text-align: center;
+    margin-top: 4px;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.cheese-link-btn:hover {
+    background-color: #7ab8e0;
+    color: #1a3a52 !important;
+}
+
 .sidepanel.is-dragging {
     background-color: lightblue;
 }

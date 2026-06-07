@@ -140,6 +140,7 @@ function cheesePanel(chosenCheese) {
     const link = document.createElement('a');
     link.href = chosenCheese.url;
     link.target = '_blank';
+    link.className = 'cheese-link-btn';
     link.textContent = 'View on cheese.com';
     card.appendChild(link);
 
