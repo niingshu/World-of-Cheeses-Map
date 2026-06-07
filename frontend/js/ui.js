@@ -161,4 +161,16 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
+map.on('click', () => {
+    const panel = document.getElementById('cheese-panel');
+    panel.style.width = '0';
+    panel.style.padding = '10px 0';
+
+    if (selectedMarker) {
+        selectedMarker.setIcon(cheeseSpot);
+        selectedMarker = null;
+        selectedCheese = null;
+    }
+});
+
 //fix the filter box below the +/- of leaflet

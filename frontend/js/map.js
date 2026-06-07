@@ -133,7 +133,7 @@ function cheesePanel(chosenCheese) {
         const strong = document.createElement('strong');
         strong.textContent = `${label}: `;
         p.appendChild(strong);
-        p.appendChild(document.createTextNode(value));
+        p.appendChild(document.createTextNode(value.charAt(0).toUpperCase() + value.slice(1)));
         card.appendChild(p);
     });
 
