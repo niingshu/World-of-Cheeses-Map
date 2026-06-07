@@ -13,21 +13,22 @@ body {
     flex-direction: column;
     height: 100vh;
     overflow: hidden;
-    background-color: rgb(211, 216, 221);
-    font-family: sans-serif;
+    background-color: #f5f0e8;
+    font-family: 'Inter', sans-serif;
 }
 
-.top-bar { /* class */
+.top-bar {
     height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(220, 220, 222);
+    background: linear-gradient(135deg, #d4a94c, #c4913a, #b87a2e);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .on-top {
-    padding: 10px;
-    background: rgb(220, 220, 222);
+    padding: 0;
+    background: transparent;
     z-index: 1000;
 }
 
@@ -38,41 +39,71 @@ body {
 
 .map-titles {
     text-align: center;
-    color:rgb(17, 37, 55);
+    color: #fef9f0;
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    margin: 0;
 }
 
 .search {
     position: fixed;
-    top: 25px;
+    top: 18px;
     right: 16px;
-    width: 260px;
-    z-index: 2000; /*stay above the map*/
-    overflow-y: scroll; /*scrollable*/
+    width: 180px;
+    z-index: 2000;
+    overflow-y: scroll;
 }
 
 #searchInput {
     width: 100%;
-    padding: 10px 10px;
+    padding: 7px 10px;
     box-sizing: border-box;
     border-radius: 6px;
+    border: 1px solid #c9bda8;
+    background: #fef9f0;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #3a2e1f;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#searchInput:focus {
+    border-color: #d4a94c;
+    box-shadow: 0 2px 8px rgba(212, 169, 76, 0.3);
+}
+
+#searchInput::placeholder {
+    color: #a89a85;
 }
 
 #resultList {
     z-index: 10000;
     list-style: none;
-    font-size: small;
-    margin: 2px 0 0;
+    font-size: 13px;
+    margin: 4px 0 0;
     padding: 0;
     max-height: calc(100vh - 100px);
     overflow-y: auto;
-    background: #e9e8e8;
-    border-radius: 6px;
+    background: #fef9f0;
+    border-radius: 8px;
     box-sizing: border-box;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #c9bda8;
+}
+
+#resultList:empty {
+    display: none;
 }
 
 #resultList li {
-    padding: 2px 10px;
+    padding: 3px 10px;
     cursor: pointer;
+    color: #3a2e1f;
+    transition: background-color 0.15s;
 }
 
 #resultList li:last-child {
@@ -80,9 +111,8 @@ body {
 }
 
 #resultList li:hover {
-    z-index: 2000;
-    background-color: #fbf9f9;
-    font-weight: bold;
+    background-color: #f0e6d2;
+    font-weight: 600;
 }
 
 /*bold the matching letters in a search*/
@@ -93,40 +123,60 @@ body {
 /*filtering functions*/
 .controls {
     position: fixed;
-    top: 25px;
+    top: 18px;
     left: 16px;
-    width: 200px;
-    z-index: 2000;
-    background: rgb(220, 220, 222);
-    padding: 10px;
-    border-radius: 6px;
+    width: 180px;
+    z-index: 10001;
+    padding: 0;
 }
 
 #filterBtn {
     width: 100%;
     box-sizing: border-box;
+    padding: 7px 10px;
+    border-radius: 6px;
+    border: 1px solid #c9bda8;
+    background: #fef9f0;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #3a2e1f;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#filterBtn:hover {
+    border-color: #d4a94c;
+    box-shadow: 0 2px 8px rgba(212, 169, 76, 0.3);
 }
 
 #countryList {
     list-style: none;
-    font-size: small;
+    font-size: 13px;
     margin: 4px 0 0;
     padding: 0;
     max-height: calc(100vh - 100px);
     overflow-y: auto;
-    background: #e9e8e8;
-    border-radius: 1px;
+    background: #fef9f0;
+    border-radius: 8px;
+    border: 1px solid #c9bda8;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10000;
 }
 
 #countryList li {
-    padding: 2px 5px;
+    padding: 3px 10px;
     cursor: pointer;
+    color: #3a2e1f;
+    transition: background-color 0.15s;
 }
 
 #countryList li:hover,
 #countryList li.active {
-    background: #fbf9f9;
-    font-weight: bold;
+    background: #f0e6d2;
+    font-weight: 600;
 }
 
 .item {
@@ -139,19 +189,19 @@ body {
 /*The sidepanel menu*/
 .sidepanel {
     width: 0;
-    height: calc(100vh - 106px);
-    position: fixed; /*stay in place*/
-    z-index: 1000; /*stay on top*/
-    top: 0;
-    right: 0; /*show the panel on the right*/
-    margin-top: 90px;
-    margin-bottom: 70px;
-    border-radius: 6px;
-    background-color: white; /*black*/
-    overflow-x: hidden; /*disable horizontal scroll*/
+    height: calc(100vh - 70px);
+    position: fixed;
+    z-index: 1000;
+    top: 70px;
+    right: 0;
+    margin: 0;
+    border-radius: 0;
+    background-color: #fef9f0;
+    overflow-x: hidden;
     overflow-y: scroll;
     padding: 10px 0;
     transition: 0.3s;
+    box-shadow: -4px 0 16px rgba(0, 0, 0, 0.12);
 }
 
 /*resizing bar*/
@@ -182,26 +232,29 @@ body {
 .sidepanel .name {
     margin: 0 0 5px 0;
     padding: 0 40px 0 0;
-    color: #181818;
-    font-weight: bold;
-    font-size: 29px;
-    line-height: 36px;
+    color: #2c1e0e;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
 }
 
 /*display the text within the panel*/
-.sidepanel a, .sidepanel p { 
+.sidepanel a, .sidepanel p {
     padding: 0px 10px 3px 10px;
     text-decoration: none;
-    font-size: 17px;
-    color: #585858;
+    font-size: 15px;
+    color: #5a4a3a;
     display: block;
     overflow-y: scroll;
     transition: 0.3s;
+    font-family: 'Inter', sans-serif;
 }
 
 .sidepanel p strong {
-    font-size: 19px;
-    color: #333;
+    font-size: 15px;
+    font-weight: 600;
+    color: #3a2e1f;
 }
 
 .panel-image {
@@ -229,11 +282,11 @@ body {
   font-size: 36px;
   margin-left: 50px;
   text-decoration: none;
-  color: rgb(75, 75, 75);
+  color: #8a7a6a;
 }
 
 .closebtn:hover {
-    color: black;
+    color: #3a2e1f;
 }
 
 /* Style the button that is used to open the sidepanel */
@@ -253,24 +306,25 @@ body {
 
 .cheese-link-btn {
     display: inline-block !important;
-    background-color: #a0cfee;
-    color: #1a3a52 !important;
+    background-color: #d4a94c;
+    color: #fef9f0 !important;
     padding: 10px 20px !important;
     border-radius: 8px;
-    font-size: 17px !important;
+    font-size: 14px !important;
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
     text-decoration: none !important;
     text-align: center;
-    margin-top: 4px;
+    margin-top: 8px;
     transition: background-color 0.2s;
     cursor: pointer;
 }
 
 .cheese-link-btn:hover {
-    background-color: #7ab8e0;
-    color: #1a3a52 !important;
+    background-color: #b8912e;
+    color: #fef9f0 !important;
 }
 
 .sidepanel.is-dragging {
-    background-color: lightblue;
+    background-color: #f0e6d2;
 }

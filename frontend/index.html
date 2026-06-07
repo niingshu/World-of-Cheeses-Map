@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.Default.css" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -21,23 +25,23 @@
         <div class="top-bar">
             <h1 id="title" class="map-titles">World of Cheeses Map</h1>
         </div>
+    </div>
 
-            <!--search tool-->
-            <div class="search">
-                <input type="text" id="searchInput" placeholder="Search for cheese...">
-                <ul id="resultList"></ul>
-            </div>
+    <!--search tool-->
+    <div class="search">
+        <input type="text" id="searchInput" placeholder="Search for cheese...">
+        <ul id="resultList"></ul>
+    </div>
 
-            <!--filtering button and options-->
-            <div class="controls">
-                <button id="filterBtn">Filter Cheese By Country</button>
-                <ul id="countryList" style="display:none;"></ul>
-            </div>
+    <!--filtering button and options-->
+    <div class="controls">
+        <button id="filterBtn">Filter Cheese By Country</button>
+        <ul id="countryList" style="display:none;"></ul>
+    </div>
 
-            <!--panel-->
-            <div id="cheese-panel" class="sidepanel"> 
-                <!--data will be inserted here by js-->
-            </div>
+    <!--panel-->
+    <div id="cheese-panel" class="sidepanel">
+        <!--data will be inserted here by js-->
     </div>
 
     <!--map-->

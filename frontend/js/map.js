@@ -59,7 +59,9 @@ async function initMap() {
 
         marker.on('click', () => {
             onCheeseClick(cheese, marker);
-            map.flyTo(marker.getLatLng(), 12)
+            clusters.zoomToShowLayer(marker, () => {
+                map.panTo(marker.getLatLng());
+            });
         });
     });
 
@@ -129,7 +131,7 @@ function cheesePanel(chosenCheese) {
     card.appendChild(cheeseImg);
 
     fields.forEach(([label, value]) => {
-        if (!value) return;
+        if (!value || value === 'NA' || value === 'N/A') return;
         const p = document.createElement('p');
         const strong = document.createElement('strong');
         strong.textContent = `${label}: `;

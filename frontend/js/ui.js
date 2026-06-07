@@ -3,12 +3,24 @@
 //clear existing markers from map
 //loop through results and add new markers
 
+function closePanel() {
+    const panel = document.getElementById('cheese-panel');
+    panel.style.width = '0';
+    panel.style.padding = '10px 0';
+    if (selectedMarker) {
+        selectedMarker.setIcon(cheeseSpot);
+        selectedMarker = null;
+        selectedCheese = null;
+    }
+}
+
 //filter box
 document.addEventListener('DOMContentLoaded', () => {
     const countryList = document.getElementById('countryList');
     const filterBtn = document.getElementById('filterBtn');
 
     filterBtn.addEventListener('click', () => {
+        closePanel();
         const isHidden = countryList.style.display === 'none';
         countryList.style.display = isHidden ? 'block' : 'none';
     });
@@ -37,6 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!li) return;
 
         const selectedValue = li.dataset.value;
+
+        closePanel();
 
         //highlight the active item and hide the list
         countryList.querySelectorAll('li').forEach(el => el.classList.remove('active'));
@@ -74,7 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     marker.on('click', () => {
                         onCheeseClick(cheese, marker);
-                        map.flyTo(marker.getLatLng(), 12)
+                        clusters.zoomToShowLayer(marker, () => {
+                            map.panTo(marker.getLatLng());
+                        })
                     });
                 })
 
@@ -100,15 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //reset the map
         initMap()
         resultList.style.maxHeight = '';
-
-        const panel = document.getElementById('cheese-panel');
-        panel.style.width = '0';
-        panel.style.padding = '10px 0';
-        if (selectedMarker) {
-            selectedMarker.setIcon(cheeseSpot);
-            selectedMarker = null;
-            selectedCheese = null;
-        }
+        closePanel();
 
         const query = event.target.value.trim();
 
@@ -161,16 +169,12 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
-map.on('click', () => {
-    const panel = document.getElementById('cheese-panel');
-    panel.style.width = '0';
-    panel.style.padding = '10px 0';
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closePanel();
+});
 
-    if (selectedMarker) {
-        selectedMarker.setIcon(cheeseSpot);
-        selectedMarker = null;
-        selectedCheese = null;
-    }
+map.on('click', () => {
+    closePanel();
 
     if (isFiltered) {
         isFiltered = false;
