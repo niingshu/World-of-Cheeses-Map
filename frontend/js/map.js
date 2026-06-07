@@ -3,6 +3,7 @@ const bounds = [];
 const cheesesMap = new Map();
 const clusters = L.markerClusterGroup();
 let selectedMarker = null;
+let isFiltered = false;
 let selectedCheese = null;
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -58,7 +59,7 @@ async function initMap() {
 
         marker.on('click', () => {
             onCheeseClick(cheese, marker);
-            map.flyTo(marker.getLatLng(), 6)
+            map.flyTo(marker.getLatLng(), 12)
         });
     });
 

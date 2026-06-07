@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         clusters.clearLayers();
         cheesesMap.clear();
+        isFiltered = !!selectedValue;
 
         const url = selectedValue
             ? `${API_BASE}/api/cheeses?country=${encodeURIComponent(selectedValue)}`
@@ -73,9 +74,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     marker.on('click', () => {
                         onCheeseClick(cheese, marker);
-                        map.flyTo(marker.getLatLng(), 6)
+                        map.flyTo(marker.getLatLng(), 12)
                     });
                 })
+
+                const bounds = cheeses
+                    .filter(c => c.lat && c.lon)
+                    .map(c => [c.lat, c.lon]);
+                if (bounds.length > 0) map.flyToBounds(bounds, { padding: [50, 50] });
             })
             .catch(error => console.error('Error fetching cheeses: ', error));
     
@@ -91,8 +97,18 @@ document.addEventListener('DOMContentLoaded', () => {
     let debounceTimer;
 
     searchInput.addEventListener('input', (event) => {
-        //reset the map 
+        //reset the map
         initMap()
+        resultList.style.maxHeight = '';
+
+        const panel = document.getElementById('cheese-panel');
+        panel.style.width = '0';
+        panel.style.padding = '10px 0';
+        if (selectedMarker) {
+            selectedMarker.setIcon(cheeseSpot);
+            selectedMarker = null;
+            selectedCheese = null;
+        }
 
         const query = event.target.value.trim();
 
@@ -129,31 +145,15 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch(`${API_BASE}/api/cheeses/${cheeseId}`)
             .then(response => response.json())
             .then(cheese => {
-                //remove all cluster 
-                clusters.clearLayers();
-                cheesesMap.clear();
+                const marker = cheesesMap.get(cheese._id);
+                if (!marker) return;
 
-                //call to display the panel in the search
-                const region = (!cheese.region || cheese.region === "NA" || cheese.region === "N/A")
-                    ? ""
-                    : cheese.region;
-
-                const tooltip = region
-                    ? `${cheese.cheese} (${region}, ${cheese.country})`
-                    : `${cheese.cheese} (${cheese.country})`;
-
-                const marker = L.marker([cheese.lat, cheese.lon], { icon: cheeseSpot })
-                    .bindTooltip(tooltip);
-
-                clusters.addLayer(marker);
-                cheesesMap.set(cheese._id, marker);
-
-                map.flyTo(marker.getLatLng(), 6)
-                
-                marker.on('click', () => {
+                clusters.zoomToShowLayer(marker, () => {
                     onCheeseClick(cheese, marker);
                 });
-                
+
+                resultList.style.maxHeight = '0px';
+                searchInput.value = '';
             })
             .catch(error => console.error('Error finding cheese: ', error));
 
@@ -170,6 +170,14 @@ map.on('click', () => {
         selectedMarker.setIcon(cheeseSpot);
         selectedMarker = null;
         selectedCheese = null;
+    }
+
+    if (isFiltered) {
+        isFiltered = false;
+        const filterBtn = document.getElementById('filterBtn');
+        filterBtn.textContent = 'Filter Cheese By Country';
+        document.querySelectorAll('#countryList li').forEach(el => el.classList.remove('active'));
+        initMap();
     }
 });
 
