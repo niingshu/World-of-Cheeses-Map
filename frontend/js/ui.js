@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         countryList.querySelectorAll('li').forEach(el => el.classList.remove('active'));
         li.classList.add('active');
         countryList.style.display = 'none';
-        filterBtn.textContent = selectedValue || 'Filter By Country';
+        filterBtn.textContent = selectedValue || 'Filter by country';
 
         clusters.clearLayers();
         cheesesMap.clear();
