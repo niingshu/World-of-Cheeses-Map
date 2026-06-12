@@ -12,6 +12,11 @@ function closePanel() {
         selectedMarker = null;
         selectedCheese = null;
     }
+    if (miniMap) {
+        miniMap.remove();
+        miniMap = null;
+        miniMapCountryLayer = null;
+    }
 }
 
 //filter box
@@ -196,4 +201,5 @@ themeBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     const isDark = document.body.classList.contains('dark-mode');
     themeBtn.innerHTML = isDark ? moonSVG : sunSVG;
+    updateMiniMapColors();
 });

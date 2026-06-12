@@ -5,6 +5,24 @@ const clusters = L.markerClusterGroup();
 let selectedMarker = null;
 let isFiltered = false;
 let selectedCheese = null;
+let miniMap = null;
+let miniMapToken = 0;
+let countriesGeoJSON = null;
+let miniMapCountryLayer = null;
+
+function updateMiniMapColors() {
+    if (!miniMapCountryLayer) return;
+    const isDark = document.body.classList.contains('dark-mode');
+    miniMapCountryLayer.setStyle({
+        fillColor: isDark ? '#2e426c' : '#ddb45a',
+        color: isDark ? '#4a6498' : '#d0a84e',
+    });
+}
+
+fetch('data/countries.geo.json')
+    .then(r => r.json())
+    .then(data => { countriesGeoJSON = data; })
+    .catch(err => console.error('Failed to load countries GeoJSON:', err));
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -90,6 +108,11 @@ function onCheeseClick(chosenCheese, marker) {
 function cheesePanel(chosenCheese) {
     const panel = document.getElementById('cheese-panel');
 
+    if (miniMap) {
+        miniMap.remove();
+        miniMap = null;
+    }
+
     panel.innerHTML = '';
 
     const closeBtn = document.createElement('a');
@@ -108,14 +131,22 @@ function cheesePanel(chosenCheese) {
     const title = document.createElement('h2');
     title.className = 'name';
     title.textContent = chosenCheese.cheese;
+    card.appendChild(title);
 
     const cheeseImg = document.createElement('img');
     cheeseImg.src = chosenCheese.image || 'images/no-cheese.jpg';
     cheeseImg.className = 'panel-image';
+    card.appendChild(cheeseImg);
 
     const region = (!chosenCheese.region || chosenCheese.region === "NA" || chosenCheese.region === "N/A")
         ? ""
         : chosenCheese.region;
+
+    const bodyRow = document.createElement('div');
+    bodyRow.className = 'panel-body';
+
+    const fieldsCol = document.createElement('div');
+    fieldsCol.className = 'panel-fields';
 
     const fields = [
         ['Country', chosenCheese.country],
@@ -127,9 +158,6 @@ function cheesePanel(chosenCheese) {
         ['Flavor', chosenCheese.flavor],
     ];
 
-    card.appendChild(title);
-    card.appendChild(cheeseImg);
-
     fields.forEach(([label, value]) => {
         if (!value || value === 'NA' || value === 'N/A') return;
         const p = document.createElement('p');
@@ -137,8 +165,52 @@ function cheesePanel(chosenCheese) {
         strong.textContent = `${label}: `;
         p.appendChild(strong);
         p.appendChild(document.createTextNode(value.charAt(0).toUpperCase() + value.slice(1)));
-        card.appendChild(p);
+        fieldsCol.appendChild(p);
     });
+
+    bodyRow.appendChild(fieldsCol);
+
+    const isMultiCountry = chosenCheese.country && chosenCheese.country.includes(',');
+
+    const rightCol = document.createElement('div');
+    rightCol.className = 'panel-minimap-container';
+
+    if (isMultiCountry) {
+        const flagGrid = document.createElement('div');
+        flagGrid.className = 'panel-flag-grid';
+
+        const countries = chosenCheese.country.split(',').map(c => c.trim());
+        countries.forEach(country => {
+            const code = getCountryCode(country);
+            if (!code) return;
+            const flagImg = document.createElement('img');
+            flagImg.src = `https://flagcdn.com/w80/${code}.png`;
+            flagImg.alt = `${country} flag`;
+            flagImg.className = 'panel-flag';
+            flagImg.onerror = () => { flagImg.style.display = 'none'; };
+            flagGrid.appendChild(flagImg);
+        });
+
+        rightCol.appendChild(flagGrid);
+    } else {
+        const flagUrl = getFlagUrl(chosenCheese.country);
+        if (flagUrl) {
+            const flagImg = document.createElement('img');
+            flagImg.src = flagUrl;
+            flagImg.alt = `${chosenCheese.country} flag`;
+            flagImg.className = 'panel-flag';
+            flagImg.onerror = () => { flagImg.style.display = 'none'; };
+            rightCol.appendChild(flagImg);
+        }
+
+        const miniMapDiv = document.createElement('div');
+        miniMapDiv.id = 'panel-minimap';
+        rightCol.appendChild(miniMapDiv);
+    }
+
+    bodyRow.appendChild(rightCol);
+
+    card.appendChild(bodyRow);
 
     const link = document.createElement('a');
     link.href = chosenCheese.url;
@@ -150,7 +222,67 @@ function cheesePanel(chosenCheese) {
     panel.appendChild(card);
 
     panel.style.padding = '10px 20px';
-    panel.style.width = '33vw'; //25 if i want it to be 1/4 the screen
+    panel.style.width = '33vw';
+
+    if (!isMultiCountry) {
+        const currentToken = ++miniMapToken;
+        setTimeout(() => {
+            if (currentToken !== miniMapToken) return;
+            const container = document.getElementById('panel-minimap');
+            if (!container) return;
+
+            miniMap = L.map('panel-minimap', {
+                zoomControl: false,
+                attributionControl: false,
+                dragging: false,
+                touchZoom: false,
+                doubleClickZoom: false,
+                scrollWheelZoom: false,
+                boxZoom: false,
+                keyboard: false,
+            });
+
+            const geoName = getGeoJSONCountryName(chosenCheese.country);
+            let countryFeature = null;
+            if (countriesGeoJSON && geoName) {
+                countryFeature = countriesGeoJSON.features.find(
+                    f => f.properties.name === geoName
+                );
+            }
+
+            if (countryFeature) {
+                const isDark = document.body.classList.contains('dark-mode');
+                const fillColor = isDark ? '#2e426c' : '#ddb45a';
+                const strokeColor = isDark ? '#4a6498' : '#d0a84e';
+                const regionColor = '#8b1a1a';
+
+                miniMapCountryLayer = L.geoJSON(countryFeature, {
+                    style: {
+                        fillColor: fillColor,
+                        fillOpacity: 0.85,
+                        color: strokeColor,
+                        weight: 1.5,
+                    },
+                }).addTo(miniMap);
+
+                miniMap.fitBounds(miniMapCountryLayer.getBounds(), { padding: [10, 10] });
+
+                if (region && chosenCheese.lat && chosenCheese.lon) {
+                    L.circle([chosenCheese.lat, chosenCheese.lon], {
+                        radius: 50000,
+                        color: regionColor,
+                        fillColor: regionColor,
+                        fillOpacity: 0.5,
+                        weight: 2,
+                    }).addTo(miniMap);
+                }
+            } else {
+                miniMap.setView([chosenCheese.lat || 20, chosenCheese.lon || 10], 5);
+            }
+
+            miniMap.invalidateSize();
+        }, 350);
+    }
 }
 
 initMap();
