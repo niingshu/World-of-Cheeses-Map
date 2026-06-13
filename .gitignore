@@ -1,4 +1,5 @@
 # caches
 backend/data/processed/geo_cache.json
 backend/data/processed/desc_cache.json
+backend/data/processed/pairing_cache.json
 .env

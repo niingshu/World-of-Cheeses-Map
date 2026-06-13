@@ -388,7 +388,7 @@ body {
 
 .panel-section-header {
     font-family: 'Playfair Display', serif;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 700;
     color: #2c1e0e;
     margin: 8px 10px 4px;
@@ -400,12 +400,26 @@ body {
 }
 
 .panel-section-text {
-    font-size: 14px !important;
+    font-size: 15px !important;
     line-height: 1.5;
     color: #5a4a3a;
     margin: 0 10px 8px;
     padding: 0 !important;
     overflow-y: visible !important;
+}
+
+.panel-pairing-list {
+    list-style: disc;
+    padding: 0 10px 0 28px;
+    margin: 0 0 8px;
+}
+
+.panel-pairing-list li {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #5a4a3a;
+    padding: 1px 0;
 }
 
 .cheese-link-btn {

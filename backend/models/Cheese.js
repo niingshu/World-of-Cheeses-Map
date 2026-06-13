@@ -23,6 +23,7 @@ const cheeseSchema = new Schema({
     flavor: String,
     description: String,
     manufacture: String,
+    pairings: [String],
 }, {
     timestamps: true //add createdAt updatedAt automatically
 });

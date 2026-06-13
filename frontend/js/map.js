@@ -212,7 +212,8 @@ function cheesePanel(chosenCheese) {
 
     card.appendChild(bodyRow);
 
-    if (chosenCheese.description || chosenCheese.manufacture) {
+    const hasSections = chosenCheese.description || chosenCheese.manufacture || (chosenCheese.pairings && chosenCheese.pairings.length);
+    if (hasSections) {
         const divider = document.createElement('hr');
         divider.className = 'panel-divider';
         card.appendChild(divider);
@@ -240,6 +241,22 @@ function cheesePanel(chosenCheese) {
         histText.className = 'panel-section-text';
         histText.textContent = chosenCheese.manufacture;
         card.appendChild(histText);
+    }
+
+    if (chosenCheese.pairings && chosenCheese.pairings.length) {
+        const pairHeader = document.createElement('h3');
+        pairHeader.className = 'panel-section-header';
+        pairHeader.textContent = 'Pairs Well With';
+        card.appendChild(pairHeader);
+
+        const pairList = document.createElement('ul');
+        pairList.className = 'panel-pairing-list';
+        chosenCheese.pairings.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            pairList.appendChild(li);
+        });
+        card.appendChild(pairList);
     }
 
     const link = document.createElement('a');
