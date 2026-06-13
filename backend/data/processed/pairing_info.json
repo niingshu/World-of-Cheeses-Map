@@ -1,0 +1,327 @@
+{
+    "Aged Bordeaux": {
+        "description": "Bordeaux wine is produced in the Bordeaux region of southwest France, around the city of Bordeaux, on the Garonne River. To the north of the city, the Dordogne River joins the Garonne forming the broad estuary called the Gironde; the Gironde department, with a total vineyard area of 110,800 hectares, is the second largest wine-growing area in France behind the Languedoc-Rousillon.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Weinbaugebiete-frankreich-bordeaux.png/330px-Weinbaugebiete-frankreich-bordeaux.png",
+        "wiki": "https://en.wikipedia.org/wiki/Bordeaux_wine"
+    },
+    "Aged Burgundy": {
+        "description": "Burgundy wine is a wine made in the Burgundy region of east-central France, in the valleys and slopes west of the Sa\u00f4ne, a tributary of the Rh\u00f4ne. The most famous wines produced here, and those commonly referred to as \"Burgundies\", are dry red wines made from pinot noir grapes and white wines made from chardonnay grapes.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Vignobles_bourgogne-fr.svg/330px-Vignobles_bourgogne-fr.svg.png",
+        "wiki": "https://en.wikipedia.org/wiki/Burgundy_wine"
+    },
+    "Aged meats": {
+        "description": "Charcuterie is a branch of French cuisine devoted to prepared meat products, such as bacon, ham, sausage, terrines, galantines, ballotines, p\u00e2t\u00e9s, and confit, primarily from pork.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Saucisson_02.JPG/330px-Saucisson_02.JPG",
+        "wiki": "https://en.wikipedia.org/wiki/Charcuterie"
+    },
+    "Albari\u00f1o": {
+        "description": "Albari\u00f1o or Alvarinho is a variety of white wine grape grown in Galicia and in Northwest Portugal where it is also used to make varietal white wines. Albari\u00f1o is the name for the grape in Galician. In Portugal it is known as Alvarinho, and sometimes as Cainho Branco.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Cacho.JPG/330px-Cacho.JPG",
+        "wiki": "https://en.wikipedia.org/wiki/Albari%C3%B1o"
+    },
+    "Almonds": {
+        "description": "The almond is a species of tree from the genus Prunus. Along with the peach, it is classified in the subgenus Amygdalus, distinguished from the other subgenera by corrugations on the woody shell (endocarp) surrounding the seed.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Almonds_-_in_shell%2C_shell_cracked_open%2C_shelled%2C_blanched.jpg/330px-Almonds_-_in_shell%2C_shell_cracked_open%2C_shelled%2C_blanched.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Almond"
+    },
+    "Assyrtiko": {
+        "description": "Assyrtiko or Asyrtiko is a white Greek wine grape indigenous to the island of Santorini. Assyrtiko is widely planted in the arid volcanic-ash-rich soil of Santorini and other Aegean islands, such as Paros. It is also found on other scattered regions of Greece such as Chalkidiki.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/ASSYRTIKO.jpg/330px-ASSYRTIKO.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Assyrtiko"
+    },
+    "Baguette": {
+        "description": "A baguette is a long, thin type of bread of French origin that is commonly made from basic lean dough. Both the dough and the physical dimensions of the tradition baguette are defined by French law. It is distinguishable by its length and crisp crust.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Baguettes%2C_Paris%2C_France_-_panoramio.jpg/330px-Baguettes%2C_Paris%2C_France_-_panoramio.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Baguette"
+    },
+    "Barolo": {
+        "description": "Barolo is a red denominazione di origine controllata e garantita (DOCG) wine produced in the northern Italian region of Piedmont. It is made from the nebbiolo grape and is often described as one of Italy's greatest wines.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Cascin_Adelaide_Barolo_%26_decanter.jpg/330px-Cascin_Adelaide_Barolo_%26_decanter.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Barolo"
+    },
+    "Basil": {
+        "description": "Basil, also called great basil, is a culinary herb of the family Lamiaceae (mints). It is a tender plant and is used in cuisines worldwide. In Western cuisine, the generic term \"basil\" refers to the variety also known as Genovese basil or sweet basil.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Ocimum_basilicum_8zz.jpg/330px-Ocimum_basilicum_8zz.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Basil"
+    },
+    "Beaujolais": {
+        "description": "Beaujolais is a French Appellation d'Origine Contr\u00f4l\u00e9e (AOC) wine in the Burgundy region. Red Beaujolais wines are generally made of the Gamay grape, which has a thin skin and is low in tannin, but like most AOC wines they are not labeled varietally. Whites, 1% of production, are made mostly with Chardonnay, though Aligot\u00e9 was also permitted until 2024.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Carte_vignoble_beaujolais.png/330px-Carte_vignoble_beaujolais.png",
+        "wiki": "https://en.wikipedia.org/wiki/Beaujolais"
+    },
+    "Belgian Ale": {
+        "description": "Beer in Belgium includes abbey beers, lambics, pilsners, Flemish red ales, sour brown ales, strong ales, Wheat beers and others. As of 2024, there were 411 breweries in Belgium, ranging from international companies, such as AB InBev to traditional breweries, like Trappist monasteries, to microbreweries. Correspondingly, the number of Belgian breweries continues to grow, with over 1,600 unique Belgian beers available.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Stella_Artois.jpg/330px-Stella_Artois.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Beer_in_Belgium"
+    },
+    "Burgundy": {
+        "description": "Burgundy wine is a wine made in the Burgundy region of east-central France, in the valleys and slopes west of the Sa\u00f4ne, a tributary of the Rh\u00f4ne. The most famous wines produced here, and those commonly referred to as \"Burgundies\", are dry red wines made from pinot noir grapes and white wines made from chardonnay grapes.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Vignobles_bourgogne-fr.svg/330px-Vignobles_bourgogne-fr.svg.png",
+        "wiki": "https://en.wikipedia.org/wiki/Burgundy_wine"
+    },
+    "Cabernet Sauvignon": {
+        "description": "Cabernet Sauvignon is one of the world's most widely recognized red wine grape varieties. It is grown in nearly every major wine producing country among a diverse spectrum of climates from Australia and British Columbia, Canada to Lebanon's Beqaa Valley.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Red_Mountain_Cabernet_Sauvignon_grapes_from_Hedge_Vineyards.jpg/330px-Red_Mountain_Cabernet_Sauvignon_grapes_from_Hedge_Vineyards.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Cabernet_Sauvignon"
+    },
+    "Chablis": {
+        "description": "Chablis is by the northernmost Appellation d'origine contr\u00f4l\u00e9e of the Burgundy region in France. Its cool climate produces wines with more acidity and less fruitiness than Chardonnay vines grown in warmer ones. These often have a \"flinty\" note, sometimes described as \"go\u00fbt de pierre \u00e0 fusil\", and sometimes as \"steely\".",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Chablis_and_Premier_Cru_Vaulorent.jpg/330px-Chablis_and_Premier_Cru_Vaulorent.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Chablis_(AOC)"
+    },
+    "Champagne": {
+        "description": "Champagne is a sparkling wine originated and produced in the Champagne wine region of France under the AOC rules of the appellation, which demand specific vineyard practices, sourcing of grapes exclusively from designated places within it, specific grape-pressing methods and secondary fermentation of the wine in the bottle to cause carbonation.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Glass_of_champagne.jpg/330px-Glass_of_champagne.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Champagne"
+    },
+    "Chardonnay": {
+        "description": "Chardonnay is a green-skinned grape variety used in the production of white wine. The variety originated in the Burgundy wine region of east-central France, but is now grown wherever wine is produced, from England to New Zealand. For new and developing wine regions, growing Chardonnay is seen as a 'rite of passage' and an easy entry into the international wine market.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Chardonnay.jpg/330px-Chardonnay.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Chardonnay"
+    },
+    "Chianti": {
+        "description": "Chianti is an Italian red wine produced in the Chianti region of central Tuscany, principally from the Sangiovese grape. It was historically associated with a squat bottle enclosed in a straw basket, called a fiasco. However, the fiasco is now only used by a few makers of the wine; most Chianti is bottled in more standard-shaped wine bottles.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Fiasco_di_vino_rosso_da_tavola_Monteriggioni.jpg/330px-Fiasco_di_vino_rosso_da_tavola_Monteriggioni.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Chianti"
+    },
+    "Chutney": {
+        "description": "A chutney is a condiment associated with cuisines of the Indian subcontinent. Chutneys are made in a wide variety of forms, some raw such as with coriander, others cooked with sugar, like mango chutney. During the British Raj, Anglo-Indian cuisine adapted Indian chutney and brought it back to Britain, where green mango chutney in particular became popular.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Chutneykarnataka.jpg/330px-Chutneykarnataka.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Chutney"
+    },
+    "Crackers": {
+        "description": "A cracker is a flat, dry baked biscuit typically made with flour. Flavorings or seasonings, such as salt, herbs, seeds, or cheese, may be added to the dough or sprinkled on top before or after baking. Crackers are often branded as a nutritious and convenient way to consume a staple food or cereal grain.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Crackers_with_herring_and_garlic_sauce.jpg/330px-Crackers_with_herring_and_garlic_sauce.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Cracker_(food)"
+    },
+    "Crusty bread": {
+        "description": "Bread is a baked food product made from water, flour, and often yeast. It is a staple food across the world, particularly in Europe and the Middle East. Throughout recorded history and around the world, it has been an important part of many cultures' diets.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Korb_mit_Br%C3%B6tchen.JPG/330px-Korb_mit_Br%C3%B6tchen.JPG",
+        "wiki": "https://en.wikipedia.org/wiki/Bread"
+    },
+    "Cured meats": {
+        "description": "Charcuterie is a branch of French cuisine devoted to prepared meat products, such as bacon, ham, sausage, terrines, galantines, ballotines, p\u00e2t\u00e9s, and confit, primarily from pork.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Saucisson_02.JPG/330px-Saucisson_02.JPG",
+        "wiki": "https://en.wikipedia.org/wiki/Charcuterie"
+    },
+    "Dark bread": {
+        "description": "Rye bread is a type of bread made with various proportions of flour from rye grain. It can be light or dark in color, depending on the type of flour used and the addition of coloring agents, and is typically denser than bread made from wheat flour. Compared to white bread, it is higher in fiber, darker in color, and stronger in flavor.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Market_Bread%2C_Riga%2C_Latvia.jpg/330px-Market_Bread%2C_Riga%2C_Latvia.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Rye_bread"
+    },
+    "Dark chocolate": {
+        "description": "Dark chocolate, also known as plain chocolate and black chocolate, is a form of chocolate made from chocolate liquor, cocoa butter and sugar. It has a higher cocoa percentage than white chocolate and milk chocolate. Dark chocolate is valued for its health benefits, and for its reputation as a sophisticated choice of chocolate.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Green_and_Black%27s_dark_chocolate_bar_2.jpg/330px-Green_and_Black%27s_dark_chocolate_bar_2.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Dark_chocolate"
+    },
+    "Dried apricots": {
+        "description": "Dried apricots are dried fruit of the apricot tree.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Ab_food_04.jpg/330px-Ab_food_04.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Dried_apricot"
+    },
+    "Dried fruits": {
+        "description": "Dried fruit is fruit from which the majority of the original water content has been removed prior to cooking or being eaten on its own. Drying may occur either naturally, by sun, through the use of industrial dehydrators, or by freeze drying. Dried fruit has a long tradition of use dating to the fourth millennium BC in Mesopotamia, and is valued for its sweet taste, nutritional content, and long shelf life.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/DriedfruitS.jpg/330px-DriedfruitS.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Dried_fruit"
+    },
+    "Dry Ros\u00e9": {
+        "description": "A ros\u00e9 is a type of wine that incorporates some of the color from the grape skins, but not enough to qualify it as a red wine. It may be the oldest known type of wine, as it is the most straightforward to make with the skin contact method. The pink color can range from a pale \"onionskin\" orange to a vivid near-purple, depending on the grape varieties used and winemaking techniques.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Ros%C3%A9_wine_-_July_2023_-_Sarah_Stierch_01-cropped.jpg/330px-Ros%C3%A9_wine_-_July_2023_-_Sarah_Stierch_01-cropped.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Ros%C3%A9"
+    },
+    "Fig jam": {
+        "description": "The fig is the edible fruit of Ficus carica, a species of tree or shrub in the flowering plant family Moraceae, native to the Mediterranean region, and to western and southern Asia. It has been cultivated since ancient times and is now widely grown throughout the world. Ficus carica is the type species of the genus Ficus, which comprises over 800 tropical and subtropical plant species.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Ficus_carica_L%2C_1771.jpg/330px-Ficus_carica_L%2C_1771.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Fig"
+    },
+    "Figs": {
+        "description": "The fig is the edible fruit of Ficus carica, a species of tree or shrub in the flowering plant family Moraceae, native to the Mediterranean region, and to western and southern Asia. It has been cultivated since ancient times and is now widely grown throughout the world. Ficus carica is the type species of the genus Ficus, which comprises over 800 tropical and subtropical plant species.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Ficus_carica_L%2C_1771.jpg/330px-Ficus_carica_L%2C_1771.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Fig"
+    },
+    "Fresh fruits": {
+        "description": "In botany, a fruit is the seed-bearing structure in flowering plants (angiosperms) that is formed from the ovary after flowering.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Fruit_Platter-_Seasonal_Fruits.jpg/330px-Fruit_Platter-_Seasonal_Fruits.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Fruit"
+    },
+    "Fresh herbs": {
+        "description": "Herbs are a widely distributed and widespread group of plants, excluding vegetables, with savory or aromatic properties that are used for flavoring and garnishing food, for medicinal purposes, or for fragrances. Culinary use typically distinguishes herbs from spices. Herbs generally refers to the leafy green or flowering parts of a plant, while spices are usually dried and produced from other parts of the plant, including seeds, bark, roots and fruits.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Garden_of_herbs.jpg/330px-Garden_of_herbs.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Herb"
+    },
+    "Fresh melon": {
+        "description": "A melon is any of various plants of the family Cucurbitaceae with sweet, edible, and fleshy fruit. It can also specifically refer to Cucumis melo, commonly known as the \"true melon\" or simply \"melon\". The term \"melon\" can apply to both the plant and its fruit.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Cantaloupe_and_canary_melon.jpg/330px-Cantaloupe_and_canary_melon.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Melon"
+    },
+    "Gew\u00fcrztraminer": {
+        "description": "Gew\u00fcrztraminer is an aromatic wine grape variety, used in white wines, and which performs best in cooler climates. In English, it is sometimes referred to colloquially as Gew\u00fcrz. In English and French it is usually written Gewurztraminer.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Gew%C3%BCrztramine_Viala_et_Vermorelr.jpg/330px-Gew%C3%BCrztramine_Viala_et_Vermorelr.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Gew%C3%BCrztraminer"
+    },
+    "Grapes": {
+        "description": "A grape is a fruit, botanically a berry, of the deciduous woody vines of the flowering plant genus Vitis. Grapes are a non-climacteric type of fruit, generally occurring in clusters.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Grapes%2C_Rostov-on-Don%2C_Russia.jpg/330px-Grapes%2C_Rostov-on-Don%2C_Russia.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Grape"
+    },
+    "Green apples": {
+        "description": "The Granny Smith is an apple cultivar that originated in Australia in 1868. It is named after Maria Ann Smith, who propagated the cultivar from a chance seedling. The tree is thought to be a hybrid of Malus sylvestris, the European wild apple, with the domesticated apple Malus domestica as the polleniser.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Granny_smith_and_cross_section.jpg/330px-Granny_smith_and_cross_section.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Granny_Smith"
+    },
+    "Grilled vegetables": {
+        "description": "Grilling is a form of cooking that involves heat applied to the surface of food, commonly from above, below or from the side. Grilling usually involves a significant amount of direct, radiant heat, and tends to be used for cooking meat and vegetables quickly. Food to be grilled is cooked on a grill, using a cast iron/frying pan, or a grill pan.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Grillen_-_BBQ_-_Barbeque_-_Fleisch_auf_dem_Grill.jpg/330px-Grillen_-_BBQ_-_Barbeque_-_Fleisch_auf_dem_Grill.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Grilling"
+    },
+    "Honey": {
+        "description": "Honey is a sweet and viscous substance made by several species of bees, the best-known of which are honey bees. Honey is made and stored to nourish bee colonies. Bees produce honey by gathering and then refining the sugary secretions of plants or the secretions of other insects, like the honeydew of aphids.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Runny_hunny.jpg/330px-Runny_hunny.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Honey"
+    },
+    "Late Harvest Riesling": {
+        "description": "Late harvest is wine made from grapes left on the vine longer than usual. Late harvest is usually an indication of a sweet dessert wine, such as late harvest Riesling. Late harvest grapes are often more similar to raisins, but have been naturally dehydrated while on the vine.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Late_harvest_Semillon.jpg/330px-Late_harvest_Semillon.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Late_harvest"
+    },
+    "Light crackers": {
+        "description": "A cracker is a flat, dry baked biscuit typically made with flour. Flavorings or seasonings, such as salt, herbs, seeds, or cheese, may be added to the dough or sprinkled on top before or after baking. Crackers are often branded as a nutritious and convenient way to consume a staple food or cereal grain.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Crackers_with_herring_and_garlic_sauce.jpg/330px-Crackers_with_herring_and_garlic_sauce.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Cracker_(food)"
+    },
+    "Malbec": {
+        "description": "Malbec is a purple grape variety used in making red wine. The grapes tend to have an inky dark color and robust tannins, and are known as one of the six grapes allowed in the blend of red Bordeaux wine. In France, plantations of Malbec are now found primarily in Cahors in South West France, though the grape is grown worldwide.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Malbec_grapes.jpg/330px-Malbec_grapes.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Malbec"
+    },
+    "Merlot": {
+        "description": "Merlot is a dark-blue-colored wine grape variety that is used as both a blending grape and for varietal wines. The name Merlot is thought to be a diminutive of merle, the French name for the blackbird, probably a reference to the color of the grape. Its softness and \"fleshiness\", combined with its earlier ripening, make Merlot a popular grape for blending with the sterner, later-ripening Cabernet Sauvignon, which tends to be higher in tannin.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Merlot.jpg/330px-Merlot.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Merlot"
+    },
+    "Mustard": {
+        "description": "Mustard is a condiment made from the seeds of a mustard plant, which may be the white/yellow mustard, brown mustard, or black mustard.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Mustard.JPG/330px-Mustard.JPG",
+        "wiki": "https://en.wikipedia.org/wiki/Mustard_(condiment)"
+    },
+    "Olive oil drizzle": {
+        "description": "Olive oil is a vegetable oil obtained by pressing whole olives and extracting the oil.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Oliven_V1.jpg/330px-Oliven_V1.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Olive_oil"
+    },
+    "Olives": {
+        "description": "The olive is a species of subtropical evergreen tree in the family Oleaceae. Originating in Asia Minor, it is abundant throughout the Mediterranean Basin, with wild subspecies in Africa and western Asia; modern cultivars are traced primarily to the Near East, Aegean Sea, and Strait of Gibraltar. The olive is the type species for its genus, Olea, and lends its name to the Oleaceae plant family, which includes lilac, jasmine, forsythia, and ash.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Olivesfromjordan.jpg/330px-Olivesfromjordan.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Olive"
+    },
+    "Pears": {
+        "description": "Pears are a genus of trees, Pyrus, in the family Rosaceae, that bear an edible apple-like fruit of the same name. Several species of pears are cultivated for their fruit and juices, while others are grown as ornamental flowering trees.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Pears.jpg/330px-Pears.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Pear"
+    },
+    "Pickled onions": {
+        "description": "Pickled onions are a food item consisting of onions pickled in a solution of vinegar and salt, often with other preservatives and flavourings. There is a variety of small white pickled onions known as 'silverskin' onions; due to imperfections they are pickled instead of being wasted. They are frequently used as the distinguishing feature of a variation on the Martini cocktail, known as a Gibson.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Rew13d10-805_Pickled_Onions.JPG/330px-Rew13d10-805_Pickled_Onions.JPG",
+        "wiki": "https://en.wikipedia.org/wiki/Pickled_onion"
+    },
+    "Pinot Grigio": {
+        "description": "Pinot gris, pinot grigio, or Grauburgunder is a white wine grape variety of the species Vitis vinifera. Thought to be a mutant clone of the pinot noir variety, it normally has a pinkish-gray hue, accounting for its name, but the colors can vary from blue-gray to pinkish-brown. The word pinot could have been given to it because the grapes grow in small pinecone-shaped clusters.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Pinot_Grigio-20201027-RM-114053.jpg/330px-Pinot_Grigio-20201027-RM-114053.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Pinot_gris"
+    },
+    "Pinot Noir": {
+        "description": "Pinot noir, also known as Pinot nero, and Sp\u00e4tburgunder is a red-wine grape variety of the species Vitis vinifera. The name also refers to wines created predominantly from Pinot noir grapes. The name is derived from the French words for pine and black.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Grape_near_Sancerre.jpg/330px-Grape_near_Sancerre.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Pinot_noir"
+    },
+    "Port": {
+        "description": "Port wine, or simply port, is a Portuguese fortified wine produced in the Douro Valley of northern Portugal. It is typically a sweet red wine, often served with dessert, although it also comes in dry, semi-dry, and white varieties.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Port_wine.jpg/330px-Port_wine.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Port_wine"
+    },
+    "Prosciutto": {
+        "description": "Prosciutto, also known as prosciutto crudo, is an uncooked, unsmoked, and dry-cured ham. It is usually served thinly sliced.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Prosciutto_di_Parma%2C_ham_producing.jpg/330px-Prosciutto_di_Parma%2C_ham_producing.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Prosciutto"
+    },
+    "Prosecco": {
+        "description": "Prosecco is an Italian DOC or DOCG white wine produced in a large area spanning nine provinces in the Veneto and Friuli-Venezia Giulia regions, and named after the village of Prosecco, in the province of Trieste, Italy. It is made from the Prosecco grape, but denomination rules allow up to 15% of the wine to be other permitted varieties. Prosecco is almost always made in sparkling or semi-sparkling style, but a still wine is also permitted.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Prosecco_di_Conegliano_bottle_and_glass.jpg/330px-Prosecco_di_Conegliano_bottle_and_glass.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Prosecco"
+    },
+    "Riesling": {
+        "description": "Riesling is a white grape variety that is believed to have originated from the Rhine Valley region of western Germany, before later being traced to the Alsace region by 1470 and Austria by 1700. Riesling is an aromatic grape variety displaying flowery, almost perfumed, aromas as well as high acidity. It is used to make dry, semi-sweet, sweet, and sparkling white wines.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Riesling_grapes_leaves.jpg/330px-Riesling_grapes_leaves.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Riesling"
+    },
+    "Rye bread": {
+        "description": "Rye bread is a type of bread made with various proportions of flour from rye grain. It can be light or dark in color, depending on the type of flour used and the addition of coloring agents, and is typically denser than bread made from wheat flour. Compared to white bread, it is higher in fiber, darker in color, and stronger in flavor.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Market_Bread%2C_Riga%2C_Latvia.jpg/330px-Market_Bread%2C_Riga%2C_Latvia.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Rye_bread"
+    },
+    "Sancerre": {
+        "description": "Sancerre is a medieval hilltop town and commune in the department of Cher, Centre-Val de Loire, France, overlooking the river Loire. It is a member of Les Plus Beaux Villages de France Association, noted for its wine and for inventing Crottin de Chavignol Cheese.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Sancerre_france.jpg/330px-Sancerre_france.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Sancerre"
+    },
+    "Sauternes": {
+        "description": "Sauternes is a French sweet wine from the region of the same name in the Graves section in Bordeaux. Sauternes wine is made from S\u00e9millon, sauvignon blanc, and muscadelle grapes that have been affected by Botrytis cinerea, also known as noble rot. This causes the grapes to become partially raisined, resulting in concentrated and distinctively flavored wines.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Yquem99.jpg/330px-Yquem99.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Sauternes_(wine)"
+    },
+    "Sauvignon Blanc": {
+        "description": "Sauvignon blanc is a green-skinned grape variety that most likely originated in the Loire Valley wine region in France, though it has also been historically cultivated in Bordeaux. The grape most likely gets its name from the French words sauvage (\"wild\") and blanc (\"white\") due to its early origins as an indigenous grape in South West France. It is possibly a descendant of Savagnin.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Sauvignon_blanc_grapes.jpg/330px-Sauvignon_blanc_grapes.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Sauvignon_blanc"
+    },
+    "Sherry": {
+        "description": "Sherry is a fortified wine produced from white grapes grown around the city of Jerez de la Frontera in Andalusia, Spain. Sherry is a drink produced in a variety of styles made primarily from the Palomino grape, ranging from light versions similar to white table wines, such as Manzanilla and fino, to darker and heavier versions that have been allowed to oxidise as they age in barrel, such as Amontillado and oloroso. Sweet dessert wines are also made from Pedro Xim\u00e9nez or Moscatel grapes, and are sometimes blended with Palomino-based sherries.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/DO_Jerez_location.svg/330px-DO_Jerez_location.svg.png",
+        "wiki": "https://en.wikipedia.org/wiki/Sherry"
+    },
+    "Sourdough": {
+        "description": "Sourdough is a leavening agent containing naturally occurring yeast and lactobacillus bacteria. The term is frequently used to describe bread baked with sourdough, while the sourdough itself is referred to as a starter. In addition to leavening the bread, the fermentation process produces lactic acid, which gives the bread its distinctive sour taste and improves its keeping qualities.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Home_made_sour_dough_bread.jpg/330px-Home_made_sour_dough_bread.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Sourdough"
+    },
+    "Syrah": {
+        "description": "Syrah, also known as Shiraz, is a dark-skinned grape variety grown throughout the world and used primarily to produce red wine. In 1999, Syrah was found to be the offspring of two obscure grapes from southeastern France, Dureza and Mondeuse Blanche. Syrah should not be confused with Petite Sirah, a cross of Syrah with Peloursin dating from 1880.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Syrah.jpg/330px-Syrah.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Syrah"
+    },
+    "Tempranillo": {
+        "description": "Tempranillo is a black grape variety widely grown to make full-bodied red wines in its native Spain. Its name is the diminutive of the Spanish temprano (\"early\"), a reference to the fact that it ripens several weeks earlier than most Spanish red grapes. Tempranillo has been grown on the Iberian Peninsula since the time of Phoenician settlements.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Tempranillo_Viala_et_Vermorel.jpg/330px-Tempranillo_Viala_et_Vermorel.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Tempranillo"
+    },
+    "Tomatoes": {
+        "description": "The tomato is a plant whose fruit is an edible berry that is eaten as a vegetable. The tomato is a member of the nightshade family that includes tobacco, potato, and chili peppers. It originated from western South America, and may have been domesticated there, in Mexico, or in Central America.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tomato_je.jpg/330px-Tomato_je.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Tomato"
+    },
+    "Verdejo": {
+        "description": "Verdejo is a variety of wine grape that has long been grown in the Rueda region of Spain. The grape originated in North Africa, and was spread to Rueda in about the 11th Century, possibly by Mozarabs. Verdejo was generally used to make a strongly oxidized, Sherry-like wine.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Rueda_Verdejo.JPG/330px-Rueda_Verdejo.JPG",
+        "wiki": "https://en.wikipedia.org/wiki/Verdejo"
+    },
+    "Vermentino": {
+        "description": "Vermentino is a light-skinned wine grape variety, primarily found in Italian wine. It is widely planted in Sardinia, Liguria and Tuscany, to some extent in Corsica, in Piedmont under the name Favorita, and in increasing amounts in Languedoc-Roussillon. The leaves are dark green and pentagonal.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Rolle_%28Vermentino%29.jpg/330px-Rolle_%28Vermentino%29.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Vermentino"
+    },
+    "Walnuts": {
+        "description": "A walnut is the edible seed of any tree of the genus Juglans, particularly the Persian or English walnut, Juglans regia. They are accessory fruit because the outer covering of the fruit is technically an involucre and thus not morphologically part of the carpel; this means it cannot be a drupe but is instead a drupe-like nut.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Walnuts_-_whole_and_open_with_halved_kernel.jpg/330px-Walnuts_-_whole_and_open_with_halved_kernel.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Walnut"
+    },
+    "Watermelon": {
+        "description": "The watermelon is a species of flowering plant in the family Cucurbitaceae, that has a large, edible fruit. It is a scrambling and trailing vine-like plant, and is widely cultivated worldwide, with more than 1,000 varieties.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Taiwan_2009_Tainan_City_Organic_Farm_Watermelon_FRD_7962.jpg/330px-Taiwan_2009_Tainan_City_Organic_Farm_Watermelon_FRD_7962.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Watermelon"
+    },
+    "Zinfandel": {
+        "description": "Zinfandel is a variety of black-skinned wine grape. The variety is grown in over 10 percent of California vineyards.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Ripe_Zinfandel_grapes_in_Dry_Creek_Valley-8958.jpg/330px-Ripe_Zinfandel_grapes_in_Dry_Creek_Valley-8958.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Zinfandel"
+    }
+}

@@ -388,7 +388,7 @@ body {
 
 .panel-section-header {
     font-family: 'Playfair Display', serif;
-    font-size: 19px;
+    font-size: 20px;
     font-weight: 700;
     color: #2c1e0e;
     margin: 8px 10px 4px;
@@ -412,6 +412,46 @@ body {
     list-style: disc;
     padding: 0 10px 0 28px;
     margin: 0 0 8px;
+}
+
+.pairing-link {
+    cursor: pointer;
+    color: #b8912e;
+    transition: color 0.2s;
+}
+
+.pairing-link:hover {
+    color: #8a6d1e;
+    text-decoration: underline;
+}
+
+.dark-mode .pairing-link {
+    color: #3a6a90;
+}
+
+.dark-mode .pairing-link:hover {
+    color: #4a8ab5;
+}
+
+.pairing-back-btn {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    background: none;
+    border: none;
+    font-size: 36px;
+    color: #8a7a6a;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.pairing-back-btn:hover {
+    color: #b8a898;
+}
+
+.pairing-detail-title {
+    margin-top: 35px !important;
 }
 
 .panel-pairing-list li {

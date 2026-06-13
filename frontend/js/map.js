@@ -10,6 +10,12 @@ let miniMapToken = 0;
 let countriesGeoJSON = null;
 let miniMapCountryLayer = null;
 let allCheeses = [];
+let pairingInfo = {};
+
+fetch('data/pairing_info.json')
+    .then(r => r.json())
+    .then(data => { pairingInfo = data; })
+    .catch(err => console.error('Failed to load pairing info:', err));
 
 function updateMiniMapColors() {
     if (!miniMapCountryLayer) return;
@@ -52,6 +58,69 @@ var highlightCheese = L.icon({
     shadowAnchor:   [4, 62], 
     popupAnchor:    [-3*1.5, -20*1.5]
 });
+
+function showPairingDetail(itemName, cheese) {
+    const panel = document.getElementById('cheese-panel');
+    const info = pairingInfo[itemName] || {};
+
+    panel.innerHTML = '';
+
+    const closeBtn = document.createElement('a');
+    closeBtn.className = 'closebtn';
+    closeBtn.textContent = '×';
+    closeBtn.addEventListener('click', () => {
+        panel.style.width = '0';
+        panel.style.padding = '10px 0';
+    });
+    panel.appendChild(closeBtn);
+
+    const card = document.createElement('div');
+    card.className = 'cheese-card';
+
+    const backBtn = document.createElement('button');
+    backBtn.className = 'pairing-back-btn';
+    backBtn.textContent = '←';
+    backBtn.addEventListener('click', () => {
+        cheesePanel(cheese);
+    });
+    card.appendChild(backBtn);
+
+    const title = document.createElement('h2');
+    title.className = 'name pairing-detail-title';
+    title.textContent = itemName;
+    card.appendChild(title);
+
+    if (info.image) {
+        const img = document.createElement('img');
+        img.src = info.image;
+        img.alt = itemName;
+        img.className = 'panel-image';
+        card.appendChild(img);
+    }
+
+    if (info.description) {
+        const descHeader = document.createElement('h3');
+        descHeader.className = 'panel-section-header';
+        descHeader.textContent = 'Description';
+        card.appendChild(descHeader);
+
+        const desc = document.createElement('p');
+        desc.className = 'panel-section-text';
+        desc.textContent = info.description;
+        card.appendChild(desc);
+    }
+
+    if (info.wiki) {
+        const wikiLink = document.createElement('a');
+        wikiLink.href = info.wiki;
+        wikiLink.target = '_blank';
+        wikiLink.className = 'cheese-link-btn';
+        wikiLink.textContent = 'Read more on Wikipedia';
+        card.appendChild(wikiLink);
+    }
+
+    panel.appendChild(card);
+}
 
 function findSimilarCheeses(cheese, max) {
     const types = (cheese.type || '').toLowerCase().split(',').map(t => t.trim()).filter(Boolean);
@@ -271,7 +340,11 @@ function cheesePanel(chosenCheese) {
         pairList.className = 'panel-pairing-list';
         chosenCheese.pairings.forEach(item => {
             const li = document.createElement('li');
-            li.textContent = item;
+            const link = document.createElement('span');
+            link.className = 'pairing-link';
+            link.textContent = item;
+            link.addEventListener('click', () => showPairingDetail(item, chosenCheese));
+            li.appendChild(link);
             pairList.appendChild(li);
         });
         card.appendChild(pairList);
