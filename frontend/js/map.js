@@ -141,6 +141,7 @@ function findSimilarCheeses(cheese, max) {
 async function initMap() {
     const data = await fetchCheeses()
     allCheeses = data;
+    await fetchSavedCheeses();
 
     data.forEach(cheese => {
         if (!cheese.lat || !cheese.lon) return; //skip the rest 
@@ -444,12 +445,36 @@ function cheesePanel(chosenCheese) {
         card.appendChild(simGrid);
     }
 
+    const btnRow = document.createElement('div');
+    btnRow.className = 'panel-btn-row';
+
     const link = document.createElement('a');
     link.href = chosenCheese.url;
     link.target = '_blank';
     link.className = 'cheese-link-btn';
     link.textContent = 'View on cheese.com';
-    card.appendChild(link);
+    btnRow.appendChild(link);
+
+    const isSaved = savedSet.has(chosenCheese._id);
+    const saveBtn = document.createElement('button');
+    saveBtn.className = 'save-btn' + (isSaved ? ' saved' : '');
+    saveBtn.textContent = isSaved ? 'Remove from Trylist' : 'Save to Trylist';
+    saveBtn.addEventListener('click', async () => {
+        if (savedSet.has(chosenCheese._id)) {
+            await unsaveCheese(chosenCheese._id);
+            saveBtn.classList.remove('saved');
+            saveBtn.textContent = 'Save to Trylist';
+            updateWishlistBadge(savedSet.size);
+        } else {
+            await saveCheese(chosenCheese._id);
+            saveBtn.classList.add('saved');
+            saveBtn.textContent = 'Remove from Trylist';
+            updateWishlistBadge(savedSet.size);
+        }
+    });
+    btnRow.appendChild(saveBtn);
+
+    card.appendChild(btnRow);
 
     panel.appendChild(card);
 

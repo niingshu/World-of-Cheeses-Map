@@ -42,6 +42,16 @@
     <!--dark/light mode toggle-->
     <button id="themeToggle" class="theme-toggle-btn" title="Toggle light/dark mode"></button>
 
+    <!--wishlist toggle-->
+    <div class="wishlist-container">
+        <button id="wishlistBtn" class="wishlist-btn" title="Want to Try list"></button>
+        <div id="wishlistDropdown" class="wishlist-dropdown" style="display:none;">
+            <div class="wishlist-header">Want to Try</div>
+            <ul id="wishlistItems" class="wishlist-items"></ul>
+            <div id="wishlistEmpty" class="wishlist-empty">No cheeses saved yet</div>
+        </div>
+    </div>
+
     <!--panel-->
     <div id="cheese-panel" class="sidepanel">
         <!--data will be inserted here by js-->

@@ -592,6 +592,229 @@ body {
     background: #4a7faa;
 }
 
+.panel-btn-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.panel-btn-row .cheese-link-btn {
+    margin-top: 0;
+    flex: 1;
+}
+
+.save-btn {
+    flex: 1;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid #d4a94c;
+    background: transparent;
+    color: #d4a94c;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.save-btn:hover {
+    background: rgba(212, 169, 76, 0.1);
+}
+
+.save-btn.saved {
+    background: #d4a94c;
+    color: #fef9f0;
+    border-color: #d4a94c;
+}
+
+.save-btn.saved:hover {
+    background: #b8912e;
+    border-color: #b8912e;
+}
+
+.dark-mode .save-btn {
+    border-color: #4a7faa;
+    color: #4a7faa;
+}
+
+.dark-mode .save-btn:hover {
+    background: rgba(74, 127, 170, 0.1);
+}
+
+.dark-mode .save-btn.saved {
+    background: #4a7faa;
+    color: #fef9f0;
+    border-color: #4a7faa;
+}
+
+.dark-mode .save-btn.saved:hover {
+    background: #3a6a90;
+    border-color: #3a6a90;
+}
+
+.wishlist-container {
+    position: fixed;
+    top: 18px;
+    right: 210px;
+    z-index: 10001;
+}
+
+.wishlist-btn {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #c9bda8;
+    background: #fef9f0;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s, border-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.wishlist-btn:hover {
+    border-color: #d4a94c;
+    box-shadow: 0 2px 8px rgba(212, 169, 76, 0.3);
+}
+
+.wishlist-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #e74c3c;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 1;
+}
+
+.wishlist-dropdown {
+    position: absolute;
+    top: 44px;
+    right: 0;
+    width: 240px;
+    max-height: 360px;
+    background: #fef9f0;
+    border: 1px solid #c9bda8;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    overflow-y: auto;
+}
+
+.wishlist-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #2c1e0e;
+    padding: 7px 14px 6px;
+    border-bottom: 1px solid #e8dcc8;
+}
+
+.wishlist-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.wishlist-items li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 14px;
+    border-bottom: 1px solid #f0e6d2;
+    transition: background 0.15s;
+}
+
+.wishlist-items li:last-child {
+    border-bottom: none;
+}
+
+.wishlist-items li:hover {
+    background: #f0e6d2;
+}
+
+.wishlist-cheese-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #3a2e1f;
+    cursor: pointer;
+    flex: 1;
+}
+
+.wishlist-cheese-name:hover {
+    color: #b8912e;
+}
+
+.wishlist-remove-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #a89a85;
+    cursor: pointer;
+    padding: 0 0 0 8px;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.wishlist-remove-btn:hover {
+    color: #c0392b;
+}
+
+.wishlist-empty {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #a89a85;
+    text-align: center;
+    padding: 16px 14px;
+}
+
+.dark-mode .wishlist-btn {
+    background: #e8eef5;
+    border-color: #a0b0c4;
+}
+
+.dark-mode .wishlist-dropdown {
+    background: #e8eef5;
+    border-color: #a0b0c4;
+}
+
+.dark-mode .wishlist-header {
+    color: #2c3e50;
+    border-bottom-color: #c8d6e5;
+}
+
+.dark-mode .wishlist-items li {
+    border-bottom-color: #d0dce8;
+}
+
+.dark-mode .wishlist-items li:hover {
+    background: #d0dce8;
+}
+
+.dark-mode .wishlist-cheese-name {
+    color: #2c3e50;
+}
+
+.dark-mode .wishlist-cheese-name:hover {
+    color: #3a6a90;
+}
+
+.dark-mode .wishlist-empty {
+    color: #8a9bb5;
+}
+
 .theme-toggle-btn {
     position: fixed;
     top: 18px;

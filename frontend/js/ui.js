@@ -190,6 +190,107 @@ map.on('click', () => {
     }
 });
 
+// wishlist dropdown
+const wishlistBtn = document.getElementById('wishlistBtn');
+const wishlistDropdown = document.getElementById('wishlistDropdown');
+const bookmarkOutlineSVG = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#3a2e1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
+wishlistBtn.innerHTML = bookmarkOutlineSVG;
+
+function updateWishlistBadge(count) {
+    let badge = wishlistBtn.querySelector('.wishlist-badge');
+    if (count > 0) {
+        if (!badge) {
+            badge = document.createElement('span');
+            badge.className = 'wishlist-badge';
+            wishlistBtn.appendChild(badge);
+        }
+        badge.textContent = count;
+    } else if (badge) {
+        badge.remove();
+    }
+}
+
+fetchSavedCheeses().then(saved => updateWishlistBadge(saved.length));
+
+wishlistBtn.addEventListener('click', () => {
+    const isHidden = wishlistDropdown.style.display === 'none';
+    wishlistDropdown.style.display = isHidden ? 'block' : 'none';
+    if (isHidden) refreshWishlist();
+});
+
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.wishlist-container') && !themeBtn.contains(e.target)) {
+        wishlistDropdown.style.display = 'none';
+    }
+});
+
+async function refreshWishlist() {
+    const items = document.getElementById('wishlistItems');
+    const emptyMsg = document.getElementById('wishlistEmpty');
+    items.innerHTML = '';
+
+    const saved = await fetchSavedCheeses();
+    updateWishlistBadge(saved.length);
+    if (saved.length === 0) {
+        emptyMsg.style.display = 'block';
+        return;
+    }
+    emptyMsg.style.display = 'none';
+
+    saved.forEach(cheese => {
+        const li = document.createElement('li');
+
+        const nameSpan = document.createElement('span');
+        nameSpan.className = 'wishlist-cheese-name';
+        nameSpan.textContent = cheese.cheese;
+        nameSpan.addEventListener('click', () => {
+            wishlistDropdown.style.display = 'none';
+            const marker = cheesesMap.get(cheese._id);
+            if (marker) {
+                clusters.zoomToShowLayer(marker, () => {
+                    onCheeseClick(cheese, marker);
+                    map.panTo(marker.getLatLng());
+                });
+            }
+        });
+        li.appendChild(nameSpan);
+
+        const removeBtn = document.createElement('button');
+        removeBtn.className = 'wishlist-remove-btn';
+        removeBtn.textContent = '×';
+        removeBtn.addEventListener('click', async (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            li.style.transition = 'opacity 0.25s ease, max-height 0.3s ease, padding 0.3s ease';
+            li.style.opacity = '0';
+            li.style.maxHeight = li.scrollHeight + 'px';
+            requestAnimationFrame(() => {
+                li.style.maxHeight = '0';
+                li.style.padding = '0 14px';
+                li.style.overflow = 'hidden';
+            });
+            await unsaveCheese(cheese._id);
+            updateWishlistBadge(savedSet.size);
+            setTimeout(() => {
+                li.remove();
+                if (items.children.length === 0) {
+                    emptyMsg.style.display = 'block';
+                }
+                if (selectedCheese && selectedCheese._id === cheese._id) {
+                    const saveBtn = document.querySelector('.save-btn');
+                    if (saveBtn) {
+                        saveBtn.classList.remove('saved');
+                        saveBtn.textContent = 'Save to Trylist';
+                    }
+                }
+            }, 300);
+        });
+        li.appendChild(removeBtn);
+
+        items.appendChild(li);
+    });
+}
+
 // dark/light mode toggle
 const moonSVG = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#3a2e1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
 const sunSVG = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#3a2e1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
