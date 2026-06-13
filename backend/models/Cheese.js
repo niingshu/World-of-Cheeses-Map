@@ -24,6 +24,7 @@ const cheeseSchema = new Schema({
     description: String,
     manufacture: String,
     pairings: [String],
+    images: [String],
 }, {
     timestamps: true //add createdAt updatedAt automatically
 });

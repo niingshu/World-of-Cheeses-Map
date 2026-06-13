@@ -3,4 +3,5 @@ backend/data/processed/geo_cache.json
 backend/data/processed/desc_cache.json
 backend/data/processed/pairing_cache.json
 backend/data/processed/pairing_info_cache.json
+backend/data/processed/images_cache.json
 .env

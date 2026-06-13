@@ -220,10 +220,77 @@ function cheesePanel(chosenCheese) {
     title.textContent = chosenCheese.cheese;
     card.appendChild(title);
 
-    const cheeseImg = document.createElement('img');
-    cheeseImg.src = chosenCheese.image || 'images/no-cheese.jpg';
-    cheeseImg.className = 'panel-image';
-    card.appendChild(cheeseImg);
+    const carouselImages = [];
+    if (chosenCheese.image) carouselImages.push(chosenCheese.image);
+    if (chosenCheese.images) {
+        chosenCheese.images.forEach(url => {
+            if (!carouselImages.includes(url)) carouselImages.push(url);
+        });
+    }
+
+    if (carouselImages.length > 1) {
+        const container = document.createElement('div');
+        container.className = 'carousel-container';
+
+        const img = document.createElement('img');
+        img.src = carouselImages[0];
+        img.className = 'carousel-slide';
+        container.appendChild(img);
+
+        let currentIdx = 0;
+
+        carouselImages.forEach(url => {
+            const preload = new Image();
+            preload.src = url;
+        });
+
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'carousel-btn prev';
+        prevBtn.textContent = '‹';
+        container.appendChild(prevBtn);
+
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'carousel-btn next';
+        nextBtn.textContent = '›';
+        container.appendChild(nextBtn);
+
+        card.appendChild(container);
+
+        const dots = document.createElement('div');
+        dots.className = 'carousel-dots';
+        carouselImages.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+            dot.addEventListener('click', () => goTo(i));
+            dots.appendChild(dot);
+        });
+        card.appendChild(dots);
+
+        function goTo(idx) {
+            if (idx === currentIdx) return;
+            currentIdx = idx;
+            img.style.opacity = '0';
+            setTimeout(() => {
+                img.src = carouselImages[idx];
+                img.onload = () => { img.style.opacity = '1'; };
+            }, 150);
+            dots.querySelectorAll('.carousel-dot').forEach((d, j) => {
+                d.classList.toggle('active', j === idx);
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            goTo((currentIdx - 1 + carouselImages.length) % carouselImages.length);
+        });
+        nextBtn.addEventListener('click', () => {
+            goTo((currentIdx + 1) % carouselImages.length);
+        });
+    } else {
+        const cheeseImg = document.createElement('img');
+        cheeseImg.src = carouselImages[0] || 'images/no-cheese.jpg';
+        cheeseImg.className = 'panel-image';
+        card.appendChild(cheeseImg);
+    }
 
     const region = (!chosenCheese.region || chosenCheese.region === "NA" || chosenCheese.region === "N/A")
         ? ""
