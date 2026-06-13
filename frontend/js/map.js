@@ -212,6 +212,36 @@ function cheesePanel(chosenCheese) {
 
     card.appendChild(bodyRow);
 
+    if (chosenCheese.description || chosenCheese.manufacture) {
+        const divider = document.createElement('hr');
+        divider.className = 'panel-divider';
+        card.appendChild(divider);
+    }
+
+    if (chosenCheese.description) {
+        const descHeader = document.createElement('h3');
+        descHeader.className = 'panel-section-header';
+        descHeader.textContent = 'Description';
+        card.appendChild(descHeader);
+
+        const descText = document.createElement('p');
+        descText.className = 'panel-section-text';
+        descText.textContent = chosenCheese.description;
+        card.appendChild(descText);
+    }
+
+    if (chosenCheese.manufacture) {
+        const histHeader = document.createElement('h3');
+        histHeader.className = 'panel-section-header';
+        histHeader.textContent = 'How It\'s Made';
+        card.appendChild(histHeader);
+
+        const histText = document.createElement('p');
+        histText.className = 'panel-section-text';
+        histText.textContent = chosenCheese.manufacture;
+        card.appendChild(histText);
+    }
+
     const link = document.createElement('a');
     link.href = chosenCheese.url;
     link.target = '_blank';

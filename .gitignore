@@ -1,3 +1,4 @@
-# geo cache
+# caches
 backend/data/processed/geo_cache.json
+backend/data/processed/desc_cache.json
 .env

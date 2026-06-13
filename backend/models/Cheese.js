@@ -21,6 +21,8 @@ const cheeseSchema = new Schema({
     texture: String,
     color: String,
     flavor: String,
+    description: String,
+    manufacture: String,
 }, {
     timestamps: true //add createdAt updatedAt automatically
 });

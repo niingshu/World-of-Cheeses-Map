@@ -294,6 +294,7 @@ body {
 }
 
 .sidepanel p strong {
+    font-family: 'Playfair Display', serif;
     font-size: 15px;
     font-weight: 600;
     color: #3a2e1f;
@@ -373,6 +374,38 @@ body {
 
 .openbtn:hover {
   background-color: #1a1919;
+}
+
+.panel-divider {
+    border: none;
+    border-top: 1px solid #d4c5a9;
+    margin: 14px 10px;
+}
+
+.dark-mode .panel-divider {
+    border-top-color: #a0b0c4;
+}
+
+.panel-section-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #2c1e0e;
+    margin: 8px 10px 4px;
+    padding: 0;
+}
+
+.dark-mode .panel-section-header {
+    color: #2c3e50;
+}
+
+.panel-section-text {
+    font-size: 14px !important;
+    line-height: 1.5;
+    color: #5a4a3a;
+    margin: 0 10px 8px;
+    padding: 0 !important;
+    overflow-y: visible !important;
 }
 
 .cheese-link-btn {
