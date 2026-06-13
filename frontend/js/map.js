@@ -9,6 +9,7 @@ let miniMap = null;
 let miniMapToken = 0;
 let countriesGeoJSON = null;
 let miniMapCountryLayer = null;
+let allCheeses = [];
 
 function updateMiniMapColors() {
     if (!miniMapCountryLayer) return;
@@ -52,8 +53,25 @@ var highlightCheese = L.icon({
     popupAnchor:    [-3*1.5, -20*1.5]
 });
 
+function findSimilarCheeses(cheese, max) {
+    const types = (cheese.type || '').toLowerCase().split(',').map(t => t.trim()).filter(Boolean);
+    const milk = (cheese.milk || '').toLowerCase().trim();
+
+    return allCheeses
+        .filter(c => {
+            if (c._id === cheese._id) return false;
+            if (!c.type || !c.milk) return false;
+            const cMilk = c.milk.toLowerCase().trim();
+            if (cMilk !== milk) return false;
+            const cTypes = c.type.toLowerCase().split(',').map(t => t.trim());
+            return types.some(t => cTypes.includes(t));
+        })
+        .slice(0, max);
+}
+
 async function initMap() {
     const data = await fetchCheeses()
+    allCheeses = data;
 
     data.forEach(cheese => {
         if (!cheese.lat || !cheese.lon) return; //skip the rest 
@@ -257,6 +275,33 @@ function cheesePanel(chosenCheese) {
             pairList.appendChild(li);
         });
         card.appendChild(pairList);
+    }
+
+    const similar = findSimilarCheeses(chosenCheese, 6);
+    if (similar.length) {
+        const simHeader = document.createElement('h3');
+        simHeader.className = 'panel-section-header';
+        simHeader.textContent = 'Browse Similar Cheeses';
+        card.appendChild(simHeader);
+
+        const simGrid = document.createElement('div');
+        simGrid.className = 'similar-cheese-grid';
+        similar.forEach(sim => {
+            const item = document.createElement('span');
+            item.className = 'similar-cheese-item';
+            item.textContent = sim.cheese;
+            item.addEventListener('click', () => {
+                const marker = cheesesMap.get(sim._id);
+                if (marker) {
+                    onCheeseClick(sim, marker);
+                    clusters.zoomToShowLayer(marker, () => {
+                        map.panTo(marker.getLatLng());
+                    });
+                }
+            });
+            simGrid.appendChild(item);
+        });
+        card.appendChild(simGrid);
     }
 
     const link = document.createElement('a');

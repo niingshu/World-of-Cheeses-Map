@@ -422,6 +422,35 @@ body {
     padding: 1px 0;
 }
 
+.similar-cheese-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 12px;
+    padding: 2px 10px 8px;
+}
+
+.similar-cheese-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #b8912e;
+    cursor: pointer;
+    padding: 2px 0;
+    transition: color 0.2s;
+}
+
+.similar-cheese-item:hover {
+    color: #8a6d1e;
+    text-decoration: underline;
+}
+
+.dark-mode .similar-cheese-item {
+    color: #3a6a90;
+}
+
+.dark-mode .similar-cheese-item:hover {
+    color: #4a8ab5;
+}
+
 .cheese-link-btn {
     display: inline-block !important;
     background-color: #d4a94c;
